@@ -15,7 +15,7 @@ My portfolio is designed primarily for potential engineering employers while als
 
 ### Intentional Customization
 
-*To be completed after the portfolio customization is implemented.*
+I changed the primary color scheme of the portfolio from the template's default green to indigo. The purpose of this change was to give the portfolio a more distinct visual identity while maintaining the simple and consistent layout of the original template. I selected indigo because the darker blue tone provides a restrained appearance that keeps attention on the engineering content rather than the website design itself. The default green was functional, but it did not distinguish my portfolio from the original course template. This change allows the site to have its own visual identity without changing the navigation or organization that instructors and other readers use to locate my work.
 
 ### Documentation Standard
 
