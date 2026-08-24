@@ -1,2 +1,10 @@
-#About Me
-This is how to edit
+# About Me
+
+My name is Angelito Chris (AC) G. Florencondia, and I am a Mechanical Engineering student at the University of North Carolina at Charlotte. My interest in engineering began with a desire to use technology to improve people's lives. I grew up in the Philippines in a low-income community where much of my family worked in the medical field. Although I respected their work, I knew that medicine was not the way I wanted to contribute. As a child, I became fascinated with transportation while riding to school in my uncle's motorcycle tricycle. I began wondering why transportation options were limited for families like mine and how they could be made more accessible.
+
+Engineering also has a personal connection for me. My father, who passed away shortly after I was born, was an electrical engineer who helped bring electrical power to communities in the Philippines, including the area where my family lived. Learning about his work inspired me to experiment with electronics and build projects from discarded toys and components. Over time, my interests expanded from electronics to cars, mechanical systems, and eventually mechanical engineering.
+
+Today, I am developing my skills through hands-on engineering projects, Formula SAE, and independent prototyping. One of my strengths is taking an idea and quickly turning it into a working prototype, even when there are no detailed instructions to follow. My experience has included redesigning an RC-car suspension, CAD and fabrication work, embedded electronics, and developing a timing-gate system for Formula SAE. I am also working to improve my ability to turn prototypes into polished final products and to strengthen my technical communication and leadership skills.
+
+My long-term goal is to establish an engineering company in the Philippines that uses motorsports as a platform for testing and developing technology while supporting the development of safe and affordable transportation. I want my career to ultimately be remembered not only for what I engineered, but for who my engineering helped.
+
