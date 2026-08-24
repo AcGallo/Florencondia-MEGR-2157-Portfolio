@@ -15,11 +15,11 @@ nav:
   - Portfolio Overview: portfolio-overview.md
   - Assignments:
       - "A1: Create Portfolio": assignments/A01/index.md
-      - "A2": assignments/A02/index.md
+      - "A2: Truss Stress Analysis": assignments/A02/index.md
       - "A3: Parametric and FEA": assignments/A03/index.md
       - "A4: Motor Mount": assignments/A04/index.md
       - "A5: Bracket Design": assignments/A05/index.md
-      - "A6: Bracket Drawing (Drawings Part 1)": assignments/A06/index.md
+      - "A6: Bracket Drawing": assignments/A06/index.md
       - "A7: FEA on Bracket": assignments/A07/index.md
       - "A8: Gear Box Design": assignments/A08/index.md
       - "A9: Pulley System Design": assignments/A09/index.md
