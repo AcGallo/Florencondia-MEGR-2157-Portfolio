@@ -22,3 +22,17 @@ I made two intentional changes to the original portfolio template: I changed the
 For every assignment in this portfolio, I will document my engineering work so that another engineer can reproduce my process and understand the reasoning behind my design decisions without needing additional explanation.
 
 ## Communicate
+
+## What Does It Mean to Defend an Engineering Decision?
+
+To me, defending an engineering decision means being able to explain why I believe a decision is worth making and why I am willing to stand behind it. My first consideration is safety. If a design can accomplish its purpose without creating unnecessary risk to people, then I am more comfortable defending that choice. On a larger scale, I also believe an engineering decision is worth defending when it can provide a meaningful benefit to people or society.
+
+At this point, I understand these principles, but I do not think I fully know how to defend an engineering decision from a technical standpoint yet. I can explain why I believe an idea makes sense based on my experience, but I still need to improve at supporting those decisions with calculations, requirements, evidence, and comparisons between alternatives. I expect this course to help me develop that ability so that I can defend a decision based not only on what I believe is right, but also on engineering reasoning that another person can evaluate.
+
+---
+
+### Professional Introduction
+
+My professional introduction and engineering background are available in the About Me section of this portfolio.
+
+[View About Me](../../aboutme/)
