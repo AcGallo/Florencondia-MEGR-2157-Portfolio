@@ -54,6 +54,147 @@ Although Rick's website is visually basic compared with Nived's, I think the eng
 
 The main feature I would take from **Nived's portfolio** is the organization of projects, experience, and resume information. From **Rick's portfolio**, I would take the emphasis on supporting engineering decisions with calculations, trade-offs, and testing. For my own portfolio, I want to combine these approaches while improving reproducibility by providing enough technical documentation for another engineer to understand how my work could be recreated.
 
+---
+
+## Task B: Product Analysis
+
+### Product — Angled Precision Tweezers
+
+For this product analysis, I selected a pair of angled precision tweezers. The tweezers are made from two thin metal arms permanently joined at one end. The geometry of the arms allows the tweezers to behave like a spring while also providing the gripping motion needed to manipulate small objects.
+
+### Primary Mechanical Function
+
+The primary mechanical function of the tweezers is to convert an applied finger force into a controlled gripping force at the tips.
+
+When the user squeezes the two arms, the arms elastically bend inward and the distance between the tips decreases. The tips eventually contact the object being manipulated and apply a gripping force to it. When the user releases the tweezers, the elastic behavior of the metal causes the arms to return toward their original open position.
+
+This allows the same structure to provide both the motion and restoring force without requiring a separate hinge or spring.
+
+### Governing Model
+
+The mechanical behavior of each tweezer arm can be approximated as a cantilever beam undergoing bending.
+
+A simplified relationship for the deflection of a cantilever beam is:
+
+**δ = FL³ / 3EI**
+
+Where:
+
+- **δ** = deflection of the tweezer arm
+- **F** = force applied by the user's fingers
+- **L** = effective length of the flexible arm
+- **E** = Young's modulus of the material
+- **I** = second moment of area of the arm cross-section
+
+The equation shows that the amount of movement at the tip depends on both the material and geometry of the tweezer. Increasing the applied force or effective arm length increases deflection, while increasing the material stiffness or second moment of area decreases deflection.
+
+For the tweezers to work properly, the arms must be flexible enough to move when squeezed while remaining stiff enough to provide a useful gripping force.
+
+#### Assumption
+
+For this simplified model, each arm is assumed to behave approximately as a cantilever beam experiencing small elastic deflection. The material is assumed to remain below its yield strength during normal use. Therefore, when the applied finger force is removed, the arms return approximately to their original shape.
+
+### Component Geometry and Mechanical Function
+
+The geometry of the tweezers can be divided into four important functional areas: the **joined base, flexible arms, angled neck, and precision tips**.
+
+#### Joined Base
+
+[Insert photograph of joined base here]
+
+The two metal arms are permanently joined at the rear of the tweezers. This connection acts approximately as the fixed end of the flexible structure.
+
+Because the two arms are constrained at this end, applying force farther along the arms causes them to bend inward. The rounded shape of the rear also eliminates sharp external corners in an area that may contact the user's hand.
+
+#### Flexible Arms and Finger-Grip Region
+
+[Insert photograph of full tweezer body here]
+
+The majority of the tweezers consists of two long, thin, and relatively flat metal arms. The arms gradually separate from the joined base, leaving an open space between them when no force is being applied.
+
+The long and thin geometry allows the arms to elastically bend when squeezed. The relatively wide middle portion also provides a larger surface where the user's fingers can apply force.
+
+This section performs much of the spring function of the tweezers. When the user releases the applied force, the elastic deformation of the arms causes them to move back toward their original position.
+
+#### Angled Neck
+
+[Insert photograph of angled neck here]
+
+Near the working end, both arms contain a noticeable bend. This changes the direction of the gripping tips relative to the main body of the tweezers.
+
+The angled geometry allows the user to approach a small object while keeping the larger body of the tweezers and the user's fingers farther away from the immediate working area. This can improve visibility and access when manipulating small components.
+
+#### Precision Tips
+
+[Insert close-up photograph of tips here]
+
+After the angled section, the arms narrow significantly into small precision tips.
+
+When the arms are squeezed, the two tips move toward each other until they contact the object being manipulated. Their narrow geometry provides a small contact region, allowing objects much smaller than the width of the main tweezer body to be manipulated.
+
+### Relationship Between Geometry and Function
+
+The geometry of the tweezers allows a relatively simple assembly to perform several mechanical functions without a separate hinge or coil spring.
+
+The **joined base** constrains the structure, the **long thin arms** provide elastic flexibility, the **angled neck** positions the working end, and the **narrow tips** provide precise contact with small objects.
+
+Together, these features allow finger force applied over a relatively large area of the tweezer body to create controlled motion and gripping force at a much smaller working area.
+
+### Patent Research
+
+**Patent Publication Number:** US20060175853A1
+
+**Patent Title:** *Tweezer*
+
+**Patent:** [US20060175853A1 — Google Patents](https://patents.google.com/patent/US20060175853A1/en)
+
+#### Inventors
+
+The inventors listed on the patent are:
+
+- Paul Anderson
+- Lisa Baumgarten
+- Antonette Bivona
+- John Butcher
+- Ingrid Chen
+- Emily Cohen
+- Jeffery Feng
+- Stacey Grabiner
+- David Kusch
+- Jayne Lynch
+- Bryce Rutter
+- Heather Sopczynski
+
+The patent describes a tweezer with two arms extending from a common base. The user applies force to the arms, causing the tips to move toward each other and grip an object. The patent focuses on improving the shape of the arms and gripping areas to make the tweezers easier to hold and control.
+
+### Alternative Solutions
+
+Two alternative products that can perform a similar gripping function are **needle-nose pliers** and **forceps**.
+
+#### Needle-Nose Pliers
+
+Needle-nose pliers use two rigid jaws connected through a mechanical pivot. When force is applied to the handles, the jaws rotate toward each other and grip an object.
+
+Unlike the tweezers, which primarily use elastic bending of their arms, needle-nose pliers use rotational motion around a pivot. They can provide greater gripping force but are generally larger and less suitable for extremely small precision work.
+
+#### Forceps
+
+Forceps also use opposing arms or jaws to grip and manipulate objects. They are commonly used for medical, laboratory, and other precision applications.
+
+Some forceps operate similarly to tweezers by using flexible arms, while other designs use hinges or locking mechanisms. They provide another solution to the same general problem of manipulating an object that may be too small or difficult to handle directly with the user's fingers.
+
+### Design Decision from the Patent
+
+One design decision described in the patent is the geometry of the tweezer arms. The patent describes arms that first diverge outward from the base and then converge toward the centerline near the working end. It also describes features such as finger-grip depressions and a slanted tip.
+
+I think these features were selected to improve how the user holds and controls the tweezers. Changing the geometry of the arms changes the area where the user's fingers contact the tool while still allowing the arms to elastically move toward each other.
+
+The slanted tip is particularly relevant to the tweezers I analyzed because my tweezers also use an angled working end. The angled geometry allows the gripping point to be offset from the main body of the tool, which can improve access and visibility when working with small objects.
+
+Although my tweezers are not identical to the design shown in the patent, both use the geometry of the arms and tips to improve the user's ability to grip and manipulate small objects.
+
+---
+
 ## Decide
 
 ### Homepage Identity
