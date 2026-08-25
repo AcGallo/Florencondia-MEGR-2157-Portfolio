@@ -1,4 +1,4 @@
-# A10 – Lead Screw Translating System
+# A10 – Lead Screw Design
 
 ## Objective
 
