@@ -3,7 +3,6 @@
   <img src="../assets/images/image1.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
   <img src="../assets/images/image2.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
   <img src="../assets/images/image4.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
-  <img src="../assets/images/image3.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
 </div>
 
 <br>
