@@ -232,3 +232,7 @@ At this point, I understand these principles, but I do not think I fully know ho
 My professional introduction and engineering background are available in the About Me section of this portfolio.
 
 [View About Me](../../aboutme/)
+
+---
+
+**Time Spent:** Approximately 8 hours
