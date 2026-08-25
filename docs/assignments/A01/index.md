@@ -10,6 +10,8 @@ Build a professional engineering portfolio that documents my analysis, design de
 
 ### Portfolio 1 — Nived Sanjay
 
+![Nived Sanjay's Engineering Portfolio](../../assets/images/nived.png)
+
 **Portfolio:** [Nived Sanjay's Engineering Portfolio](https://www.nived-sanjay.com/)
 
 #### Navigability
@@ -31,6 +33,8 @@ I think Nived presents himself effectively from an employer's perspective becaus
 ---
 
 ### Portfolio 2 — Rick Meade
+
+![Rick Meade's Engineering Portfolio](../../assets/images/rick.png)
 
 **Portfolio:** [Rick Meade's Engineering Portfolio](https://rjmeade.github.io/)
 
@@ -57,6 +61,8 @@ The main feature I would take from **Nived's portfolio** is the organization of 
 ---
 
 ## Task B: Product Analysis
+
+![Angled precision tweezers](../../assets/images/18632.jpg)
 
 ### Product — Angled Precision Tweezers
 
@@ -100,7 +106,7 @@ The geometry of the tweezers can be divided into four important functional areas
 
 #### Joined Base
 
-[Insert photograph of joined base here]
+![Angled precision tweezers](../../assets/images/18627.jpg)
 
 The two metal arms are permanently joined at the rear of the tweezers. This connection acts approximately as the fixed end of the flexible structure.
 
@@ -108,7 +114,7 @@ Because the two arms are constrained at this end, applying force farther along t
 
 #### Flexible Arms and Finger-Grip Region
 
-[Insert photograph of full tweezer body here]
+![Angled precision tweezers](../../assets/images/18630.jpg)
 
 The majority of the tweezers consists of two long, thin, and relatively flat metal arms. The arms gradually separate from the joined base, leaving an open space between them when no force is being applied.
 
@@ -118,7 +124,7 @@ This section performs much of the spring function of the tweezers. When the user
 
 #### Angled Neck
 
-[Insert photograph of angled neck here]
+![Angled precision tweezers](../../assets/images/18629.jpg)
 
 Near the working end, both arms contain a noticeable bend. This changes the direction of the gripping tips relative to the main body of the tweezers.
 
@@ -126,7 +132,7 @@ The angled geometry allows the user to approach a small object while keeping the
 
 #### Precision Tips
 
-[Insert close-up photograph of tips here]
+![Angled precision tweezers](../../assets/images/18628.jpg)
 
 After the angled section, the arms narrow significantly into small precision tips.
 
@@ -141,6 +147,8 @@ The **joined base** constrains the structure, the **long thin arms** provide ela
 Together, these features allow finger force applied over a relatively large area of the tweezer body to create controlled motion and gripping force at a much smaller working area.
 
 ### Patent Research
+
+![Tweezer patent](../../assets/images/Tweezer_Patent.png)
 
 **Patent Publication Number:** US20060175853A1
 
