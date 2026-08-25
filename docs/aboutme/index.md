@@ -1,5 +1,12 @@
 # About Me
+<div style="display: flex; gap: 10px; width: 100%;">
+  <img src="../assets/images/image1.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
+  <img src="../assets/images/image2.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
+  <img src="../assets/images/image4.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
+  <img src="../assets/images/image3.jpg" style="width: calc(33.33% - 7px); height: 260px; object-fit: cover;">
+</div>
 
+<br>
 My name is Angelito Chris (AC) G. Florencondia, and I am a Mechanical Engineering student at the University of North Carolina at Charlotte. My interest in engineering began with a desire to use technology to improve people's lives. I grew up in the Philippines in a low-income community where much of my family worked in the medical field. Although I respected their work, I knew that medicine was not the way I wanted to contribute. As a child, I became fascinated with transportation while riding to school in my uncle's motorcycle tricycle. I began wondering why transportation options were limited for families like mine and how they could be made more accessible.
 
 Engineering also has a personal connection for me. My father, who passed away shortly after I was born, was an electrical engineer who helped bring electrical power to communities in the Philippines, including the area where my family lived. Learning about his work inspired me to experiment with electronics and build projects from discarded toys and components. Over time, my interests expanded from electronics to cars, mechanical systems, and eventually mechanical engineering.
