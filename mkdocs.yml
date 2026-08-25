@@ -14,7 +14,7 @@ nav:
   - About Me: aboutme/index.md
   - Portfolio Overview: portfolio-overview.md
   - Assignments:
-      - "A1: Create Portfolio": assignments/A01/index.md
+      - "A1: Professional Portfolio": assignments/A01/index.md
       - "A2: Truss Stress Analysis": assignments/A02/index.md
       - "A3: Parametric and FEA": assignments/A03/index.md
       - "A4: Motor Mount": assignments/A04/index.md
