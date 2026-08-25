@@ -1,4 +1,4 @@
-# A11 – Motor Selection
+# A11 – Motor Selection Design
 
 ## Objective
 
