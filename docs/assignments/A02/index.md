@@ -2,12 +2,32 @@
 
 ## Objective
 
-
 ## Analyze
 
+### Truss Geometry
+
+### Free Body Diagrams
+
+### Member Forces
+
+### Member Cross-Section
+
+### Pin Design
 
 ## Decide
-_Which geometry did you select, and why? This is your first open design choice in the course — defend it._
+
+### Final Truss Design
+
+### CAD Model
+
+### Weight Comparison
 
 ## Communicate
 
+### Failure Modes
+
+### Engineering Lessons Learned
+
+### Mistakes and Improvements
+
+### Time Spent
