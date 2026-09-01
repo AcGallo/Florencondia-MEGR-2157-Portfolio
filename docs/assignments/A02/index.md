@@ -841,7 +841,7 @@ The truss was modeled in SolidWorks using MMGS units. I first created constructi
 The completed truss profile was extruded to 15 mm. The five 26 mm joint pads were then added, followed by the five 11 mm pin holes. Finally, one 11 mm diameter by 15 mm long pin was modeled and inserted five times into the final assembly.
 
 > **Figure #10 — Construction lines and joint locations**
-![Figure #10: Construction lines and joint locations](../../assets/images/10.png)
+![Figure #2: Final truss geometry dimensions](../../assets/images/2.png)
 
 > **Figure #11 — Seven-member centerline skeleton**
 ![Figure #11: Seven-member centerline skeleton](../../assets/images/11.png)
