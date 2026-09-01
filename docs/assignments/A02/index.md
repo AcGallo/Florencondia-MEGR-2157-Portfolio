@@ -6,7 +6,7 @@ The objective of this assignment was to design a lightweight planar truss and de
 
 
 > **Figure #1 — Assignment constraints**
-![Picture #1: Assignment constraints and selected truss geometry](../../assets/images/1.png)
+![Figure #1: Assignment constraints](../../assets/images/1.png)
 
 ---
 
@@ -57,19 +57,16 @@ The overall free-body diagram shows the two applied loads and the support reacti
 Separate free-body diagrams were also made for joints A, B, C, D, and E. When solving the joints, the unknown member-force arrows were initially assumed to be in tension and were drawn away from the joint. A negative result therefore indicates compression.
 
 
-> **Picture #3 — Overall truss free-body diagram**
-> *Insert Picture #3 here.*
-<!-- IMAGE #3 GOES HERE. Example: ![Picture #3](../../assets/images/your-image-file.png) -->
+> **Figure #3 — Overall truss free-body diagram**
+![Figure #3: Overall truss free-body diagram](../../assets/images/3.png)
 
 
-> **Picture #4 — Joint A and Joint B free-body diagrams**
-> *Insert Picture #4 here.*
-<!-- IMAGE #4 GOES HERE. Example: ![Picture #4](../../assets/images/your-image-file.png) -->
+> **Figure #4 — Joint A and Joint B free-body diagrams**
+![Figure #4: Joint A and Joint B free-body diagrams](../../assets/images/4.png)
 
 
-> **Picture #5 — Joint C, Joint D, and Joint E free-body diagrams**
-> *Insert Picture #5 here.*
-<!-- IMAGE #5 GOES HERE. Example: ![Picture #5](../../assets/images/your-image-file.png) -->
+> **Figure #5 — Joint C, Joint D, and Joint E free-body diagrams**
+![Figure #5: Joint C, Joint D, and Joint E free-body diagrams](../../assets/images/5.png)
 
 
 ### Support Reactions
@@ -121,9 +118,8 @@ The largest internal-force magnitude is:
 This occurs in members CE and ED. Because every member must use the same cross-sectional area, this maximum value was used to size the truss.
 
 
-> **Picture #6 — S<sub>y</sub>mbolic and numerical truss calculations from Overleaf**
-> *Insert Picture #6 here.*
-<!-- IMAGE #6 GOES HERE. Example: ![Picture #6](../../assets/images/your-image-file.png) -->
+> **Figure #6 — Symbolic and numerical truss calculations from Overleaf**
+![Figure #6: Symbolic and numerical truss calculations from Overleaf](../../assets/images/6.png)
 
 
 ### Material Selection
@@ -141,14 +137,12 @@ Material-property source:
 [BeamDimensions - ASTM A500](https://beamdimensions.com/materials/Steel/ASTM/ASTM_A500/)
 
 
-> **Picture #7 — ASTM A500 Grade C material-property source**
-> *Insert Picture #7 here.*
-<!-- IMAGE #7 GOES HERE. Example: ![Picture #7](../../assets/images/your-image-file.png) -->
+> **Figure #7 — ASTM A500 Grade C material-property source**
+![Figure #7: ASTM A500 Grade C material-property source](../../assets/images/7.png)
 
 
-> **Picture #8 — Custom ASTM A500 Grade C material in SolidWorks**
-> *Insert Picture #8 here.*
-<!-- IMAGE #8 GOES HERE. Example: ![Picture #8](../../assets/images/your-image-file.png) -->
+> **Figure #8 — Custom ASTM A500 Grade C material in SolidWorks**
+![Figure #8: Custom ASTM A500 Grade C material in SolidWorks](../../assets/images/8.png)
 
 
 ### Member Cross-Section
@@ -192,9 +186,8 @@ The actual member safety factor is:
 Since **3.88 > 3.5**, the selected member cross-section satisfies the required safety factor.
 
 
-> **Picture #9 — Member-area and safety-factor calculations**
-> *Insert Picture #9 here.*
-<!-- IMAGE #9 GOES HERE. Example: ![Picture #9](../../assets/images/your-image-file.png) -->
+> **Figure #9 — Member-area and safety-factor calculations**
+![Figure #9: Member-area and safety-factor calculations](../../assets/images/9.png)
 
 
 ### Pin Design
@@ -250,14 +243,12 @@ The final flat truss body is 15 mm thick, so the final pin was modeled as:
 - **Length = 15 mm**
 
 
-> **Picture #10 — Critical-pin free-body diagram**
-> *Insert Picture #10 here.*
-<!-- IMAGE #10 GOES HERE. Example: ![Picture #10](../../assets/images/your-image-file.png) -->
+> **Figure #10 — Critical-pin free-body diagram**
+![Figure #10: Critical-pin free-body diagram](../../assets/images/10.png)
 
 
-> **Picture #11 — Pin sizing calculations**
-> *Insert Picture #11 here.*
-<!-- IMAGE #11 GOES HERE. Example: ![Picture #11](../../assets/images/your-image-file.png) -->
+> **Figure #11 — Pin sizing calculations**
+![Figure #11: Pin sizing calculations](../../assets/images/11.png)
 
 
 ### Pin Joint Geometry
@@ -279,9 +270,8 @@ The final joint geometry therefore uses:
 - **Truss thickness = 15 mm**
 
 
-> **Picture #12 — 26 mm joint pads and 11 mm pin holes**
-> *Insert Picture #12 here.*
-<!-- IMAGE #12 GOES HERE. Example: ![Picture #12](../../assets/images/your-image-file.png) -->
+> **Figure #12 — 26 mm joint pads and 11 mm pin holes**
+![Figure #12: 26 mm joint pads and 11 mm pin holes](../../assets/images/12.png)
 
 
 ### Analytical Mass Estimate
@@ -339,54 +329,44 @@ The truss was modeled in SolidWorks using MMGS units. I first created constructi
 The completed truss profile was extruded to 15 mm. The five 26 mm joint pads were then added, followed by the five 11 mm pin holes. Finally, one 11 mm diameter by 15 mm long pin was modeled and inserted five times into the final assembly.
 
 
-> **Picture #13 — Construction lines and joint locations**
-> *Insert Picture #13 here.*
-<!-- IMAGE #13 GOES HERE. Example: ![Picture #13](../../assets/images/your-image-file.png) -->
+> **Figure #13 — Construction lines and joint locations**
+![Figure #13: Construction lines and joint locations](../../assets/images/13.png)
 
 
-> **Picture #14 — Seven-member centerline skeleton**
-> *Insert Picture #14 here.*
-<!-- IMAGE #14 GOES HERE. Example: ![Picture #14](../../assets/images/your-image-file.png) -->
+> **Figure #14 — Seven-member centerline skeleton**
+![Figure #14: Seven-member centerline skeleton](../../assets/images/14.png)
 
 
-> **Picture #15 — 7.5 mm offset used on both sides of each member**
-> *Insert Picture #15 here.*
-<!-- IMAGE #15 GOES HERE. Example: ![Picture #15](../../assets/images/your-image-file.png) -->
+> **Figure #15 — 7.5 mm offset used on both sides of each member**
+![Figure #15: 7.5 mm offset used on both sides of each member](../../assets/images/15.png)
 
 
-> **Picture #16 — Centerlines converted to construction geometry**
-> *Insert Picture #16 here.*
-<!-- IMAGE #16 GOES HERE. Example: ![Picture #16](../../assets/images/your-image-file.png) -->
+> **Figure #16 — Centerlines converted to construction geometry**
+![Figure #16: Centerlines converted to construction geometry](../../assets/images/16.png)
 
 
-> **Picture #17 — Trimmed and cleaned joint geometry**
-> *Insert Picture #17 here.*
-<!-- IMAGE #17 GOES HERE. Example: ![Picture #17](../../assets/images/your-image-file.png) -->
+> **Figure #17 — Trimmed and cleaned joint geometry**
+![Figure #17: Trimmed and cleaned joint geometry](../../assets/images/17.png)
 
 
-> **Picture #18 — Fully defined final truss sketch**
-> *Insert Picture #18 here.*
-<!-- IMAGE #18 GOES HERE. Example: ![Picture #18](../../assets/images/your-image-file.png) -->
+> **Figure #18 — Fully defined final truss sketch**
+![Figure #18: Fully defined final truss sketch](../../assets/images/18.png)
 
 
-> **Picture #19 — Truss extruded to 15 mm**
-> *Insert Picture #19 here.*
-<!-- IMAGE #19 GOES HERE. Example: ![Picture #19](../../assets/images/your-image-file.png) -->
+> **Figure #19 — Truss extruded to 15 mm**
+![Figure #19: Truss extruded to 15 mm](../../assets/images/19.png)
 
 
-> **Picture #20 — Final truss body with joint pads and holes**
-> *Insert Picture #20 here.*
-<!-- IMAGE #20 GOES HERE. Example: ![Picture #20](../../assets/images/your-image-file.png) -->
+> **Figure #20 — Final truss body with joint pads and holes**
+![Figure #20: Final truss body with joint pads and holes](../../assets/images/20.png)
 
 
-> **Picture #21 — 11 mm × 15 mm pin model**
-> *Insert Picture #21 here.*
-<!-- IMAGE #21 GOES HERE. Example: ![Picture #21](../../assets/images/your-image-file.png) -->
+> **Figure #21 — 11 mm × 15 mm pin model**
+![Figure #21: 11 mm × 15 mm pin model](../../assets/images/21.png)
 
 
-> **Picture #22 — Final SolidWorks assembly with five pins**
-> *Insert Picture #22 here.*
-<!-- IMAGE #22 GOES HERE. Example: ![Picture #22](../../assets/images/your-image-file.png) -->
+> **Figure #22 — Final SolidWorks assembly with five pins**
+![Figure #22: Final SolidWorks assembly with five pins](../../assets/images/22.png)
 
 
 ### CAD Mass Results
@@ -404,19 +384,16 @@ The final SolidWorks assembly containing the truss and all five pins had a mass 
 **m<sub>CAD,total</sub> = 5.82704 kg**
 
 
-> **Picture #23 — Truss-body mass properties - 5771.44 g**
-> *Insert Picture #23 here.*
-<!-- IMAGE #23 GOES HERE. Example: ![Picture #23](../../assets/images/your-image-file.png) -->
+> **Figure #23 — Truss-body mass properties - 5771.44 g**
+![Figure #23: Truss-body mass properties - 5771.44 g](../../assets/images/23.png)
 
 
-> **Picture #24 — One-pin mass properties - 11.12 g**
-> *Insert Picture #24 here.*
-<!-- IMAGE #24 GOES HERE. Example: ![Picture #24](../../assets/images/your-image-file.png) -->
+> **Figure #24 — One-pin mass properties - 11.12 g**
+![Figure #24: One-pin mass properties - 11.12 g](../../assets/images/24.png)
 
 
-> **Picture #25 — Final assembly mass properties - 5827.04 g**
-> *Insert Picture #25 here.*
-<!-- IMAGE #25 GOES HERE. Example: ![Picture #25](../../assets/images/your-image-file.png) -->
+> **Figure #25 — Final assembly mass properties - 5827.04 g**
+![Figure #25: Final assembly mass properties - 5827.04 g](../../assets/images/25.png)
 
 
 ### Weight Comparison
@@ -472,9 +449,8 @@ the failure-mode screening gives the following results:
 The main sizing portion of the assignment specifically allowed compression-member buckling to be ignored. The table above is a separate MEGR 2157 failure-mode review and does not replace the required basic-stress sizing calculation.
 
 
-> **Picture #26 — Truss-member failure-mode analysis**
-> *Insert Picture #26 here.*
-<!-- IMAGE #26 GOES HERE. Example: ![Picture #26](../../assets/images/your-image-file.png) -->
+> **Figure #26 — Truss-member failure-mode analysis**
+![Figure #26: Truss-member failure-mode analysis](../../assets/images/26.png)
 
 
 ### MEGR 2157 – Pin Failure Mode
@@ -484,9 +460,8 @@ The pin was designed for direct single shear. At the critical 25 kN load, the 11
 If the applied load were increased enough, the most directly applicable failure mode for this pin design would be shear yielding across the single shear plane. Increasing the pin diameter would increase its shear area and reduce the average shear stress. A double-shear connection could also reduce the load carried by each shear plane, but this assignment specifically requires a single-shear connection.
 
 
-> **Picture #27 — Pin failure-mode analysis**
-> *Insert Picture #27 here.*
-<!-- IMAGE #27 GOES HERE. Example: ![Picture #27](../../assets/images/your-image-file.png) -->
+> **Figure #27 — Pin failure-mode analysis**
+![Figure #27: Pin failure-mode analysis](../../assets/images/27.png)
 
 
 ### Engineering Lessons Learned
@@ -502,14 +477,12 @@ My largest mistake was initially reading the assignment dimensions as **a = 4 m*
 If I repeated the assignment, I would write the problem constraints and units in a short table before starting the calculations or CAD model. I would also check the overall span and height immediately after creating the first SolidWorks sketch. This would prevent a dimension-reading mistake from carrying through the rest of the design.
 
 
-> **Picture #28 — Incorrect first CAD model at the wrong scale**
-> *Insert Picture #28 here.*
-<!-- IMAGE #28 GOES HERE. Example: ![Picture #28](../../assets/images/your-image-file.png) -->
+> **Figure #28 — Incorrect first CAD model at the wrong scale**
+![Figure #28: Incorrect first CAD model at the wrong scale](../../assets/images/28.png)
 
 
-> **Picture #29 — Corrected final CAD model**
-> *Insert Picture #29 here.*
-<!-- IMAGE #29 GOES HERE. Example: ![Picture #29](../../assets/images/your-image-file.png) -->
+> **Figure #29 — Corrected final CAD model**
+![Figure #29: Corrected final CAD model](../../assets/images/29.png)
 
 
 ### Time Spent
