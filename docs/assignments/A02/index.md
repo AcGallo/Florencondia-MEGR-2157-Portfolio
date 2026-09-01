@@ -47,10 +47,8 @@ The total centerline length of the seven members is approximately:
 **L<sub>total</sub> = 3.3211 m**
 
 
-> **Picture #2 — Final truss geometry with a = 0.4 m and b = 0.3 m**
-> *Insert Picture #2 here.*
-<!-- IMAGE #2 GOES HERE. Example: ![Picture #2](../../assets/images/your-image-file.png) -->
-
+> **Figure #2 — Final truss geometry dimensions with a = 0.4 m and b = 0.3 m**
+![Figure #2: Final truss geometry dimensions](../../assets/images/2.png)
 
 ### Free-Body Diagrams
 
