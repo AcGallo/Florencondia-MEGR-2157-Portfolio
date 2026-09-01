@@ -1077,7 +1077,7 @@ If I repeated the assignment, I would write the problem constraints and units in
 
 ### Time Spent
 
-**Total Time Spent: 18 Hours**
+**Total Time Spent: 20 Hours**
 
 The assignment included calculations, CAD modeling, a complete CAD rebuild after correcting the dimensions, pin modeling, material setup, assembly work, mass-property comparison, failure-mode analysis, and documentation.
 
