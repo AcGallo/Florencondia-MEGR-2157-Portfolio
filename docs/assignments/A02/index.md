@@ -2,15 +2,11 @@
 
 ## Objective
 
-> **Image note:** Every picture location is marked below with a numbered placeholder. Replace each placeholder with the matching screenshot or drawing when the image files are ready.
-
 The objective of this assignment was to design a lightweight planar truss and determine the required member and pin sizes using basic stress equations. I used statics to calculate the support reactions and internal member forces, then used the largest calculated force to size the common truss-member cross-section. The final design was modeled in SolidWorks so the CAD mass could be compared with the analytical mass.
 
 
-> **Picture #1 — Assignment constraints and selected truss geometry**
-> *Insert Picture #1 here.*
-<!-- IMAGE #1 GOES HERE. Example: ![Picture #1](../../assets/images/your-image-file.png) -->
-
+> **Figure #1 — Assignment constraints**
+![Picture #1: Assignment constraints and selected truss geometry](../../assets/images/1.png)
 
 ---
 
