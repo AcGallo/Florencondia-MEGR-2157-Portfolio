@@ -495,9 +495,13 @@ The assignment included calculations, CAD modeling, a complete CAD rebuild after
 
 ## CAD Download
 
-**[ADD FINAL CAD DOWNLOAD LINK HERE]**
+The completed SolidWorks CAD files can be downloaded below:
 
-The final download should include the truss part, pin part, and assembly so the model can be reviewed and reproduced.
+- [Download Truss_Florencondia.SLDPRT](../../assets/files/Truss_Florencondia.SLDPRT)
+- [Download Pin_Florencondia.SLDPRT](../../assets/files/Pin_Florencondia.SLDPRT)
+- [Download Assembly_Florencondia.SLDASM](../../assets/files/Assembly_Florencondia.SLDASM)
+
+These files include the final truss part, pin part, and complete assembly used for the CAD mass comparison.
 
 ---
 
