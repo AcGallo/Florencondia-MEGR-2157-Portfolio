@@ -15,7 +15,8 @@ The design requirements are:
 For my design, I chose a **solid circular aluminum bar**. The diameter was selected first and the required length was calculated from the maximum allowable axial deflection.
 
 > **Figure #1 — Initial circular bar design and loading conditions**
-![Figure #1: Initial circular bar design and loading conditions](../../assets/images/25.png)
+
+<img src="../../assets/images/25.png" alt="Figure #1: Initial circular bar design and loading conditions" style="width:100%; height:auto;">
 
 
 ---
@@ -156,7 +157,8 @@ $$A=0.11045$$
 $$L=24.85$$
 
 > **Figure #2 — Global variables and parametric equations used in SolidWorks**
-![Figure #2: Global variables and parametric equations used in SolidWorks](../../assets/images/26.png)
+
+<img src="../../assets/images/26.png" alt="Figure #2: Global variables and parametric equations used in SolidWorks" style="width:100%; height:auto;">
 
 
 ### Circular Cross Section
@@ -168,7 +170,8 @@ The diameter was linked directly to the global variable $d$.
 $$\boxed{d=0.375\text{ in}}$$
 
 > **Figure #3 — Circular cross section linked to the global diameter variable**
-![Figure #3: Circular cross section linked to the global diameter variable](../../assets/images/27.png)
+
+<img src="../../assets/images/27.png" alt="Figure #3: Circular cross section linked to the global diameter variable" style="width:100%; height:auto;">
 
 
 ### Parametric Extrusion
@@ -180,7 +183,8 @@ The extrusion depth was controlled by the engineering equation instead of being 
 $$\boxed{L=24.85\text{ in}}$$
 
 > **Figure #4 — Boss-Extrude controlled by the parametric length**
-![Figure #4: Boss-Extrude controlled by the parametric length](../../assets/images/28.png)
+
+<img src="../../assets/images/28.png" alt="Figure #4: Boss-Extrude controlled by the parametric length" style="width:100%; height:auto;">
 
 
 ### Final CAD Geometry
@@ -192,7 +196,8 @@ $$\boxed{d=0.375\text{ in}}$$
 $$\boxed{L=24.85\text{ in}}$$
 
 > **Figure #5 — Completed parametric circular bar**
-![Figure #5: Completed parametric circular bar](../../assets/images/29.png)
+
+<img src="../../assets/images/29.png" alt="Figure #5: Completed parametric circular bar" style="width:100%; height:auto;">
 
 
 ### Material Selection
@@ -216,7 +221,8 @@ $$E_{\text{calc}}=10.0\times10^6\text{ psi}$$
 The two values are extremely close.
 
 > **Figure #6 — Aluminum 6061-T6 material properties**
-![Figure #6: Aluminum 6061-T6 material properties](../../assets/images/30.png)
+
+<img src="../../assets/images/30.png" alt="Figure #6: Aluminum 6061-T6 material properties" style="width:100%; height:auto;">
 
 
 ### Mass Properties
@@ -236,7 +242,8 @@ $$\boxed{V_{SW}=2.74\text{ in}^3}$$
 The SolidWorks values closely match the calculated values.
 
 > **Figure #7 — SolidWorks mass properties of the final bar**
-![Figure #7: SolidWorks mass properties of the final bar](../../assets/images/31.png)
+
+<img src="../../assets/images/31.png" alt="Figure #7: SolidWorks mass properties of the final bar" style="width:100%; height:auto;">
 
 
 ---
@@ -250,14 +257,16 @@ A static study was created in SolidWorks Simulation using the same geometry, mat
 One circular end face was fully fixed.
 
 > **Figure #8 — Fixed geometry applied to the left end of the bar**
-![Figure #8: Fixed geometry applied to the left end of the bar](../../assets/images/32.png)
+
+<img src="../../assets/images/32.png" alt="Figure #8: Fixed geometry applied to the left end of the bar" style="width:100%; height:auto;">
 
 The opposite circular end face was subjected to the same axial tensile load used in the design calculation.
 
 $$\boxed{F=400\text{ lbf}}$$
 
 > **Figure #9 — 400 lbf axial load applied to the opposite end**
-![Figure #9: 400 lbf axial load applied to the opposite end](../../assets/images/33.png)
+
+<img src="../../assets/images/33.png" alt="Figure #9: 400 lbf axial load applied to the opposite end" style="width:100%; height:auto;">
 
 
 ### Mesh
@@ -267,7 +276,8 @@ The model was meshed before solving the static study.
 The default SolidWorks mesh settings were used because the original bar has a simple and uniform geometry.
 
 > **Figure #10 — Mesh settings used for the static analysis**
-![Figure #10: Mesh settings used for the static analysis](../../assets/images/34.png)
+
+<img src="../../assets/images/34.png" alt="Figure #10: Mesh settings used for the static analysis" style="width:100%; height:auto;">
 
 
 ### von Mises Stress Map
@@ -289,7 +299,8 @@ or:
 $$\boxed{\sigma_{\text{FEA,max}}=3.889\text{ ksi}}$$
 
 > **Figure #11 — von Mises stress map from the SolidWorks FEA**
-![Figure #11: von Mises stress map from the SolidWorks FEA](../../assets/images/35.png)
+
+<img src="../../assets/images/35.png" alt="Figure #11: von Mises stress map from the SolidWorks FEA" style="width:100%; height:auto;">
 
 
 ### FEA Safety Factor
@@ -322,7 +333,8 @@ $$\delta_{\text{FEA}}=8.993\times10^{-3}\text{ in}$$
 $$\boxed{\delta_{\text{FEA}}=0.008993\text{ in}}$$
 
 > **Figure #12 — Resultant displacement map from the SolidWorks FEA**
-![Figure #12: Resultant displacement map from the SolidWorks FEA](../../assets/images/36.png)
+
+<img src="../../assets/images/36.png" alt="Figure #12: Resultant displacement map from the SolidWorks FEA" style="width:100%; height:auto;">
 
 
 ---
@@ -562,7 +574,7 @@ $$S_y=40,000\text{ psi}$$
 
 The total time spent completing A3 was approximately:
 
-$$\boxed{4\text{ hours}}$$
+$$\boxed{10\text{ hours}}$$
 
 
 ---
@@ -598,9 +610,11 @@ $$\boxed{4\text{ hours}}$$
 
 ## CAD Download
 
-The SolidWorks part file used for this assignment can be downloaded below:
+The SolidWorks part file and simulation results file used for this assignment can be downloaded below:
 
 [Download A3 Circular Bar SolidWorks Part](../../assets/files/A3_Bar_Florencondia.SLDPRT)
+
+[Download A3 SolidWorks Simulation Results](../../assets/files/A3_Bar_Florencondia-Static%201.CWR)
 
 
 ---
