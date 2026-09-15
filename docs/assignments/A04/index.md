@@ -33,6 +33,13 @@ For this design:
 | Feature 2 Design Length, \(L_2\) | 50 mm |
 | Motor Shaft Offset, \(e_1\) | 18 mm |
 
+### Overall Design Concept
+
+The motor mount consists of two main structural features. **Feature 1** is the vertical motor-mounting plate, while **Feature 2** is the horizontal plate attached to the rigid wall. The applied load acts upward at the end of the motor shaft.
+
+> **Figure #1 — Overall motor-mount concept showing Feature 1, Feature 2, rigid-wall support, and applied load**
+<img src="../../assets/images/45.png" alt="Overall motor mount concept showing Feature 1 Feature 2 rigid wall support and applied load" style="width:100%; height:auto;">
+
 ### Material Selection
 
 The three provided material options were reviewed:
@@ -63,7 +70,7 @@ $$\boxed{\sigma_{\text{allow}}=17.13\text{ MPa}}$$
 
 Feature 1 is the vertical plate that attaches directly to the motor.
 
-> **Figure #1 — Feature 1 free-body diagram and hand calculations**
+> **Figure #2 — Feature 1 free-body diagram and hand calculations**
 <img src="../../assets/images/37.png" alt="Feature 1 free body diagram and hand calculations" style="width:100%; height:auto;">
 
 ### Feature 1 Moment
@@ -130,7 +137,7 @@ $$33.33\text{ mm}$$
 
 from the outside edge.
 
-> **Figure #2 — Feature 2 free-body diagram and moment calculation**
+> **Figure #3 — Feature 2 free-body diagram and moment calculation**
 <img src="../../assets/images/38.png" alt="Feature 2 free body diagram and moment calculation" style="width:100%; height:auto;">
 
 ### Feature 2 Moment
@@ -195,7 +202,7 @@ $$\boxed{h_2=15.1\text{ mm}}$$
 
 A hand-drawn isometric sketch was created before modeling the part in SolidWorks. The sketch shows the main dimensions, motor-mounting holes, and wall-mounting holes.
 
-> **Figure #3 — Hand-drawn isometric motor-mount design**
+> **Figure #4 — Hand-drawn isometric motor-mount design**
 <img src="../../assets/images/39.png" alt="Hand drawn isometric motor mount design" style="width:100%; height:auto;">
 
 ### Parametric SolidWorks Model
@@ -215,7 +222,7 @@ The parametric variables included:
 - Hole diameters
 - Motor shaft and bolt-circle dimensions
 
-> **Figure #4 — SolidWorks global variables and parametric equations**
+> **Figure #5 — SolidWorks global variables and parametric equations**
 <img src="../../assets/images/40.png" alt="SolidWorks global variables and parametric equations" style="width:100%; height:auto;">
 
 ### Feature 2 Wall-Mounting Holes
@@ -224,28 +231,28 @@ The wall-mounting holes were positioned using the 16.67 mm and 33.33 mm parametr
 
 Four **3.4 mm diameter** clearance holes were used.
 
-> **Figure #5 — Feature 2 parametric wall-mounting hole layout**
+> **Figure #6 — Feature 2 parametric wall-mounting hole layout**
 <img src="../../assets/images/41.png" alt="Feature 2 wall mounting hole layout" style="width:100%; height:auto;">
 
 ### Feature 1 Motor-Mounting Holes
 
 Feature 1 uses four **3.4 mm M3 clearance holes** positioned on a **22 mm bolt circle**, along with the motor shaft opening.
 
-> **Figure #6 — Feature 1 motor-mounting hole pattern**
+> **Figure #7 — Feature 1 motor-mounting hole pattern**
 <img src="../../assets/images/42.png" alt="Feature 1 motor mounting hole pattern" style="width:100%; height:auto;">
 
 ### Final CAD Model
 
 The final part is a single L-shaped motor mount consisting of Feature 1 and Feature 2.
 
-> **Figure #7 — Final parametric motor-mount CAD model**
+> **Figure #8 — Final parametric motor-mount CAD model**
 <img src="../../assets/images/43.png" alt="Final parametric motor mount CAD model" style="width:100%; height:auto;">
 
 ### Assembly Check
 
 The completed motor mount was assembled with a CAD model of the motor to verify that the motor and mounting pattern fit the bracket.
 
-> **Figure #8 — Final motor and motor-mount assembly**
+> **Figure #9 — Final motor and motor-mount assembly**
 <img src="../../assets/images/44.png" alt="Final motor and motor mount assembly" style="width:100%; height:auto;">
 
 ---
