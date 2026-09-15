@@ -2,14 +2,20 @@
 
 ## Objective
 
-The objective of A4 is to design a motor mount for a **Brushed 24V DC Gear Motor** subjected to a load of **300 N**. The mount must remain below the material yield strength with a required **safety factor of 3** and must not exceed a maximum deflection of **0.30 mm**.
+The objective of A4 was to design a motor mount for a **Brushed 24 V DC Gear Motor** subjected to an upward load of **300 N** at the end of the motor shaft.
 
-The design is separated into two structural features:
+The mount had to:
 
-- **Feature 1:** the portion of the mount attached to and supporting the motor.
-- **Feature 2:** the portion of the mount attached to the rigid wall.
+- Use **ABS, PETG, or PLA**.
+- Maintain a minimum **safety factor of 3**.
+- Limit maximum deflection to **0.30 mm**.
+- Be analyzed as two separate structural features.
+- Use the calculated dimensions in a **parametric SolidWorks model**.
 
-Both features are analyzed using beam bending equations for **maximum stress** and **maximum deflection**. The resulting dimensions are then used to create a parametric SolidWorks model.
+For this design:
+
+- **Feature 1** is the vertical motor-mounting plate.
+- **Feature 2** is the horizontal plate attached to the rigid wall.
 
 ---
 
@@ -17,39 +23,33 @@ Both features are analyzed using beam bending equations for **maximum stress** a
 
 ### Design Requirements
 
-The design requirements used for the motor mount are:
-
 | Requirement | Value |
 |---|---:|
 | Applied Load, \(P\) | 300 N |
-| Maximum Deflection | 0.30 mm |
+| Maximum Deflection, \(\delta_{\max}\) | 0.30 mm |
 | Required Safety Factor | 3 |
-| Mount Width, \(b\) | 50 mm |
-| Motor Shaft Offset | 18 mm |
-
-The motor weight is neglected as allowed by the assignment.
-
-> **Figure #1 — A4 motor dimensions and applied-load diagram**
-<img src="../../assets/images/37.png" alt="A4 motor dimensions and applied load diagram" style="width:100%; height:auto;">
+| Plate Width, \(b\) | 50 mm |
+| Feature 1 Design Length, \(L_1\) | 50 mm |
+| Feature 2 Design Length, \(L_2\) | 50 mm |
+| Motor Shaft Offset, \(e_1\) | 18 mm |
 
 ### Material Selection
 
-The selected material is **PETG**.
+The three provided material options were reviewed:
 
-The supplied PETG material data gives:
+- **ABS**
+- **PETG**
+- **PLA**
 
-$$\boxed{E=3.03\text{ GPa}=3030\text{ MPa}}$$
+PETG was selected for the final design.
 
-$$\boxed{S_y=51.4\text{ MPa}}$$
+From the provided PETG material data:
 
-PETG was selected because the supplied material data provides a useful combination of stiffness and yield strength for the static stress and deflection requirements of this motor mount.
+$$E=3.03\text{ GPa}=3030\text{ MPa}$$
 
-> **Figure #2 — PETG material properties used for the design**
-<img src="../../assets/images/38.png" alt="PETG material properties" style="width:100%; height:auto;">
+$$S_y=51.4\text{ MPa}$$
 
-### Allowable Stress
-
-The allowable stress is determined using the required safety factor:
+The allowable stress using the required safety factor is:
 
 $$\sigma_{\text{allow}}=\frac{S_y}{SF}$$
 
@@ -57,61 +57,18 @@ $$\sigma_{\text{allow}}=\frac{51.4}{3}$$
 
 $$\boxed{\sigma_{\text{allow}}=17.13\text{ MPa}}$$
 
-### Justifiable Assumptions
-
-The following assumptions are used to simplify the analysis:
-
-- The motor weight is neglected.
-- The wall is treated as perfectly rigid.
-- PETG is treated as a linear elastic material for the beam calculations.
-- Each feature is modeled as a rectangular beam.
-- The mount width is fixed at **50 mm**.
-- The 300 N load acts at the end of the motor shaft.
-- Stress concentrations around bolt holes are neglected in the preliminary beam analysis.
-- The wall mounting bolts are positioned symmetrically on Feature 2.
-
-### Motor Mount Research
-
-Before creating the final design, examples of existing motor mounts were reviewed to understand common mounting geometry and bolt placement.
-
-<!-- Add 1–2 motor mount research links here before submission. -->
-
 ---
 
-# Feature 1
+## Feature 1 – Motor Mounting Plate
 
-## Feature 1 – Knowns and Unknowns
+Feature 1 is the vertical plate that attaches directly to the motor.
 
-Feature 1 is the portion of the bracket that supports the motor.
+> **Figure #1 — Feature 1 free-body diagram and hand calculations**
+<img src="../../assets/images/37.png" alt="Feature 1 free body diagram and hand calculations" style="width:100%; height:auto;">
 
-Known values:
+### Feature 1 Moment
 
-$$P=300\text{ N}$$
-
-$$e_1=18\text{ mm}$$
-
-$$b=50\text{ mm}$$
-
-$$L_1=50\text{ mm}$$
-
-$$E=3030\text{ MPa}$$
-
-$$S_y=51.4\text{ MPa}$$
-
-$$SF=3$$
-
-$$\delta_{\max}=0.30\text{ mm}$$
-
-Unknown:
-
-$$h_1=?$$
-
-> **Figure #3 — Feature 1 free-body diagram and knowns/unknowns**
-<img src="../../assets/images/39.png" alt="Feature 1 free-body diagram and knowns and unknowns" style="width:100%; height:auto;">
-
-## Feature 1 – Applied Moment
-
-The 300 N force acts 18 mm from the motor mounting face.
+The 300 N load acts at the end of the motor shaft, which extends 18 mm from the mounting face.
 
 $$M_1=Pe_1$$
 
@@ -119,315 +76,177 @@ $$M_1=(300)(18)$$
 
 $$\boxed{M_1=5400\text{ N}\cdot\text{mm}=5.40\text{ N}\cdot\text{m}}$$
 
-## Feature 1 – Stress Analysis
+### Feature 1 Stress Requirement
 
 For a rectangular cross section:
 
 $$I=\frac{bh^3}{12}$$
 
-and:
-
 $$c=\frac{h}{2}$$
 
-The bending stress equation is:
+Using the bending stress equation:
 
 $$\sigma=\frac{Mc}{I}$$
 
-Substituting the rectangular section equations:
+the required thickness becomes:
 
-$$\sigma=\frac{6M}{bh^2}$$
+$$h_{1,\text{stress}}=\sqrt{\frac{6M_1SF}{bS_y}}$$
 
-Including the required safety factor:
-
-$$\frac{6M_1}{bh_1^2}\leq\frac{S_y}{SF}$$
-
-Solving symbolically for \(h_1\):
-
-$$h_1=\sqrt{\frac{6M_1SF}{bS_y}}$$
-
-Numerically:
-
-$$h_1=\sqrt{\frac{6(5400)(3)}{(50)(51.4)}}$$
+$$h_{1,\text{stress}}=\sqrt{\frac{6(5400)(3)}{(50)(51.4)}}$$
 
 $$\boxed{h_{1,\text{stress}}=6.15\text{ mm}}$$
 
-> **Figure #4 — Feature 1 handwritten bending-stress calculation**
-<img src="../../assets/images/40.png" alt="Feature 1 handwritten bending stress calculation" style="width:100%; height:auto;">
+### Feature 1 Deflection Requirement
 
-## Feature 1 – Deflection Analysis
-
-For a cantilever subjected to an end moment:
+For the cantilever model:
 
 $$\delta=\frac{ML^2}{2EI}$$
 
-Using:
+Substituting the rectangular moment of inertia and solving for thickness:
 
-$$I=\frac{bh^3}{12}$$
+$$h_{1,\text{def}}=\sqrt[3]{\frac{6M_1L_1^2}{Eb\delta_{\max}}}$$
 
-the equation becomes:
+$$h_{1,\text{def}}=\sqrt[3]{\frac{6(5400)(50)^2}{(3030)(50)(0.30)}}$$
 
-$$\delta=\frac{6ML^2}{Ebh^3}$$
+$$\boxed{h_{1,\text{def}}=12.12\text{ mm}}$$
 
-Solving symbolically for \(h_1\):
+The deflection requirement controls the Feature 1 thickness.
 
-$$h_1=\sqrt[3]{\frac{6M_1L_1^2}{Eb\delta_{\max}}}$$
-
-Numerically:
-
-$$h_1=\sqrt[3]{\frac{6(5400)(50)^2}{(3030)(50)(0.30)}}$$
-
-$$\boxed{h_{1,\text{deflection}}=12.124\text{ mm}}$$
-
-The deflection requirement controls because:
-
-$$12.124>6.15$$
-
-The final Feature 1 thickness is rounded upward to:
+The final selected thickness was rounded upward to:
 
 $$\boxed{h_1=12.2\text{ mm}}$$
 
-### Feature 1 Cross-Sectional Area
-
-$$A_1=bh_1$$
-
-$$A_1=(50)(12.2)$$
-
-$$\boxed{A_1=610\text{ mm}^2}$$
-
-### Feature 1 Verification
-
-Stress:
-
-$$\sigma_1=\frac{6(5400)}{(50)(12.2)^2}$$
-
-$$\boxed{\sigma_1=4.35\text{ MPa}}$$
-
-Actual safety factor:
-
-$$FS_1=\frac{51.4}{4.35}$$
-
-$$\boxed{FS_1=11.8}$$
-
-Deflection:
-
-$$\delta_1=\frac{6(5400)(50)^2}{(3030)(50)(12.2)^3}$$
-
-$$\boxed{\delta_1=0.294\text{ mm}}$$
-
-Since:
-
-$$0.294<0.300\text{ mm}$$
-
-Feature 1 satisfies the deflection requirement.
-
-> **Figure #5 — Feature 1 handwritten deflection calculation and final thickness**
-<img src="../../assets/images/41.png" alt="Feature 1 handwritten deflection calculation and final thickness" style="width:100%; height:auto;">
-
 ---
 
-# Feature 2
+## Feature 2 – Wall Mounting Plate
 
-## Feature 2 – Knowns and Unknowns
+Feature 2 is the horizontal plate attached to the rigid wall.
 
-Feature 2 is the vertical portion of the bracket attached to the rigid wall.
+The 50 mm plate was divided into thirds for the wall-mounting hole layout.
 
-The 50 mm plate is divided approximately into thirds for the wall bolt placement. The outer bolt line is therefore approximately:
+The second mounting-hole centerline is located at:
 
 $$33.33\text{ mm}$$
 
-from the edge.
+from the outside edge.
 
-The distance from this bolt line to the end of the plate is:
+> **Figure #2 — Feature 2 free-body diagram and moment calculation**
+<img src="../../assets/images/38.png" alt="Feature 2 free body diagram and moment calculation" style="width:100%; height:auto;">
 
-$$50-33.33=16.67\text{ mm}$$
+### Feature 2 Moment
 
-Adding the 18 mm motor shaft offset gives the Feature 2 moment arm:
+The effective moment arm is:
 
-$$e_2=16.67+18$$
+$$e_2=50-33.33+18$$
 
 $$\boxed{e_2=34.67\text{ mm}}$$
 
-Known values:
-
-$$P=300\text{ N}$$
-
-$$b=50\text{ mm}$$
-
-$$L_2=50\text{ mm}$$
-
-$$E=3030\text{ MPa}$$
-
-$$S_y=51.4\text{ MPa}$$
-
-$$SF=3$$
-
-$$\delta_{\max}=0.30\text{ mm}$$
-
-Unknown:
-
-$$h_2=?$$
-
-> **Figure #6 — Feature 2 free-body diagram and knowns/unknowns**
-<img src="../../assets/images/42.png" alt="Feature 2 free-body diagram and knowns and unknowns" style="width:100%; height:auto;">
-
-## Feature 2 – Applied Moment
+Therefore:
 
 $$M_2=Pe_2$$
 
 $$M_2=(300)(34.67)$$
 
-$$\boxed{M_2=10401\text{ N}\cdot\text{mm}\approx10.40\text{ N}\cdot\text{m}}$$
+$$\boxed{M_2=10401\text{ N}\cdot\text{mm}=10.40\text{ N}\cdot\text{m}}$$
 
-## Feature 2 – Stress Analysis
+### Feature 2 Stress Requirement
 
-The same bending stress relation is used:
+$$h_{2,\text{stress}}=\sqrt{\frac{6M_2SF}{bS_y}}$$
 
-$$h_2=\sqrt{\frac{6M_2SF}{bS_y}}$$
-
-Numerically:
-
-$$h_2=\sqrt{\frac{6(10401)(3)}{(50)(51.4)}}$$
+$$h_{2,\text{stress}}=\sqrt{\frac{6(10401)(3)}{(50)(51.4)}}$$
 
 $$\boxed{h_{2,\text{stress}}=8.54\text{ mm}}$$
 
-> **Figure #7 — Feature 2 handwritten bending-stress calculation**
-<img src="../../assets/images/43.png" alt="Feature 2 handwritten bending stress calculation" style="width:100%; height:auto;">
+### Feature 2 Deflection Requirement
 
-## Feature 2 – Deflection Analysis
+$$h_{2,\text{def}}=\sqrt[3]{\frac{6M_2L_2^2}{Eb\delta_{\max}}}$$
 
-Using the cantilever deflection relation:
+$$h_{2,\text{def}}=\sqrt[3]{\frac{6(10401)(50)^2}{(3030)(50)(0.30)}}$$
 
-$$h_2=\sqrt[3]{\frac{6M_2L_2^2}{Eb\delta_{\max}}}$$
+$$\boxed{h_{2,\text{def}}=15.08\text{ mm}}$$
 
-Numerically:
+The deflection requirement also controls Feature 2.
 
-$$h_2=\sqrt[3]{\frac{6(10401)(50)^2}{(3030)(50)(0.30)}}$$
-
-$$\boxed{h_{2,\text{deflection}}=15.085\text{ mm}}$$
-
-The deflection requirement controls because:
-
-$$15.085>8.54$$
-
-The final Feature 2 thickness is rounded upward to:
+The final selected thickness was:
 
 $$\boxed{h_2=15.1\text{ mm}}$$
-
-### Feature 2 Cross-Sectional Area
-
-$$A_2=bh_2$$
-
-$$A_2=(50)(15.1)$$
-
-$$\boxed{A_2=755\text{ mm}^2}$$
-
-### Feature 2 Verification
-
-Stress:
-
-$$\sigma_2=\frac{6(10401)}{(50)(15.1)^2}$$
-
-$$\boxed{\sigma_2=5.47\text{ MPa}}$$
-
-Actual safety factor:
-
-$$FS_2=\frac{51.4}{5.47}$$
-
-$$\boxed{FS_2=9.39}$$
-
-Deflection:
-
-$$\delta_2=\frac{6(10401)(50)^2}{(3030)(50)(15.1)^3}$$
-
-$$\boxed{\delta_2=0.299\text{ mm}}$$
-
-Since:
-
-$$0.299<0.300\text{ mm}$$
-
-Feature 2 satisfies the deflection requirement.
-
-> **Figure #8 — Feature 2 handwritten deflection calculation and final thickness**
-<img src="../../assets/images/44.png" alt="Feature 2 handwritten deflection calculation and final thickness" style="width:100%; height:auto;">
 
 ---
 
 ## Decide
 
-### Final Calculated Dimensions
-
-The final calculated dimensions are:
+### Final Design Dimensions
 
 | Parameter | Final Value |
 |---|---:|
 | Material | PETG |
-| Width | 50 mm |
-| Feature 1 Design Length | 50 mm |
+| Plate Width | 50 mm |
+| Feature 1 Height | 50 mm |
 | Feature 1 Thickness | 12.2 mm |
-| Feature 2 Design Length | 50 mm |
+| Feature 2 Length | 50 mm |
 | Feature 2 Thickness | 15.1 mm |
-| Feature 1 Deflection | 0.294 mm |
-| Feature 2 Deflection | 0.299 mm |
-| Required Safety Factor | 3 |
-| Feature 1 Calculated Safety Factor | 11.8 |
-| Feature 2 Calculated Safety Factor | 9.39 |
+| M3 Clearance Hole Diameter | 3.4 mm |
+| Motor Bolt Circle Diameter | 22 mm |
+| Motor Shaft Diameter | 6 mm |
+| Wall Hole Centerline 1 | 16.67 mm |
+| Wall Hole Centerline 2 | 33.33 mm |
 
 ### Isometric Design Sketch
 
-An isometric sketch will be completed on paper using the calculated dimensions before creating the CAD model.
+A hand-drawn isometric sketch was created before modeling the part in SolidWorks. The sketch shows the main dimensions, motor-mounting holes, and wall-mounting holes.
 
-> **Figure #9 — Final hand-drawn isometric motor-mount sketch**
-<img src="../../assets/images/45.png" alt="Final hand drawn isometric motor mount sketch" style="width:100%; height:auto;">
+> **Figure #3 — Hand-drawn isometric motor-mount design**
+<img src="../../assets/images/39.png" alt="Hand drawn isometric motor mount design" style="width:100%; height:auto;">
 
-### Parametric CAD Model
+### Parametric SolidWorks Model
 
-The motor mount will be modeled in SolidWorks using global variables and equations so that the geometry is controlled parametrically.
+Global variables and equations were entered into SolidWorks so that the calculated dimensions controlled the model.
 
-The main variables will include:
+The parametric variables included:
 
-- Load \(P\)
-- PETG Modulus of Elasticity \(E\)
-- PETG Yield Strength \(S_y\)
-- Safety Factor
-- Maximum Deflection
-- Mount Width
-- Feature 1 Thickness
-- Feature 2 Thickness
+- Applied load
+- PETG modulus of elasticity
+- PETG yield strength
+- Safety factor
+- Maximum deflection
+- Feature lengths
+- Feature thickness calculations
+- Hole positions
+- Hole diameters
+- Motor shaft and bolt-circle dimensions
 
-> **Figure #10 — SolidWorks global variables and parametric equations**
-<img src="../../assets/images/46.png" alt="SolidWorks global variables and parametric equations" style="width:100%; height:auto;">
+> **Figure #4 — SolidWorks global variables and parametric equations**
+<img src="../../assets/images/40.png" alt="SolidWorks global variables and parametric equations" style="width:100%; height:auto;">
 
-### Final CAD Geometry
+### Feature 2 Wall-Mounting Holes
 
-The final CAD model will include:
+The wall-mounting holes were positioned using the 16.67 mm and 33.33 mm parametric locations.
 
-- Feature 1 horizontal motor-support plate
-- Feature 2 vertical wall-mounting plate
-- Motor clearance feature
-- Four M3 motor mounting clearance holes
-- Wall mounting holes
-- Parametric dimensions based on the calculated geometry
+Four **3.4 mm diameter** clearance holes were used.
 
-> **Figure #11 — Feature 1 parametric sketch**
-<img src="../../assets/images/47.png" alt="Feature 1 parametric sketch" style="width:100%; height:auto;">
+> **Figure #5 — Feature 2 parametric wall-mounting hole layout**
+<img src="../../assets/images/41.png" alt="Feature 2 wall mounting hole layout" style="width:100%; height:auto;">
 
-> **Figure #12 — Feature 1 extrusion**
-<img src="../../assets/images/48.png" alt="Feature 1 extrusion" style="width:100%; height:auto;">
+### Feature 1 Motor-Mounting Holes
 
-> **Figure #13 — Feature 2 parametric sketch**
-<img src="../../assets/images/49.png" alt="Feature 2 parametric sketch" style="width:100%; height:auto;">
+Feature 1 uses four **3.4 mm M3 clearance holes** positioned on a **22 mm bolt circle**, along with the motor shaft opening.
 
-> **Figure #14 — Completed L-bracket geometry before holes**
-<img src="../../assets/images/50.png" alt="Completed L bracket geometry before holes" style="width:100%; height:auto;">
+> **Figure #6 — Feature 1 motor-mounting hole pattern**
+<img src="../../assets/images/42.png" alt="Feature 1 motor mounting hole pattern" style="width:100%; height:auto;">
 
-> **Figure #15 — Motor opening and M3 mounting-hole layout**
-<img src="../../assets/images/51.png" alt="Motor opening and M3 mounting hole layout" style="width:100%; height:auto;">
+### Final CAD Model
 
-> **Figure #16 — Wall-mounting hole layout**
-<img src="../../assets/images/52.png" alt="Wall mounting hole layout" style="width:100%; height:auto;">
+The final part is a single L-shaped motor mount consisting of Feature 1 and Feature 2.
 
-> **Figure #17 — Final parametric motor-mount CAD model**
-<img src="../../assets/images/53.png" alt="Final parametric motor mount CAD model" style="width:100%; height:auto;">
+> **Figure #7 — Final parametric motor-mount CAD model**
+<img src="../../assets/images/43.png" alt="Final parametric motor mount CAD model" style="width:100%; height:auto;">
+
+### Assembly Check
+
+The completed motor mount was assembled with a CAD model of the motor to verify that the motor and mounting pattern fit the bracket.
+
+> **Figure #8 — Final motor and motor-mount assembly**
+<img src="../../assets/images/44.png" alt="Final motor and motor mount assembly" style="width:100%; height:auto;">
 
 ---
 
@@ -435,55 +254,81 @@ The final CAD model will include:
 
 ### Design Summary
 
-Both Feature 1 and Feature 2 were sized using bending stress and beam deflection equations.
+Both features were analyzed using bending stress and deflection equations.
 
-For both features, the **maximum deflection requirement controlled the final thickness**, rather than the yield stress requirement.
+For Feature 1:
 
-Feature 1 required:
+$$h_{1,\text{stress}}=6.15\text{ mm}$$
+
+$$h_{1,\text{def}}=12.12\text{ mm}$$
+
+Therefore:
 
 $$\boxed{h_1=12.2\text{ mm}}$$
 
-Feature 2 required:
+For Feature 2:
+
+$$h_{2,\text{stress}}=8.54\text{ mm}$$
+
+$$h_{2,\text{def}}=15.08\text{ mm}$$
+
+Therefore:
 
 $$\boxed{h_2=15.1\text{ mm}}$$
 
-Using these dimensions, both calculated deflections remain below the required maximum of 0.30 mm.
+For both features, **deflection controlled the final design thickness** rather than yielding.
 
 ### Design Reflection
 
-The calculations show that stiffness is more restrictive than material yielding for this design. Although both features have calculated stresses well below the PETG yield strength, substantially more thickness is required to keep the deflection below 0.30 mm.
+The most important result from the analysis was that the motor mount was controlled more by stiffness than by material strength. The stress calculations required much smaller thicknesses, while the 0.30 mm deflection limit required substantially thicker sections.
 
-The parametric CAD model allows the main design dimensions to update from the governing equations rather than being entered as unrelated fixed dimensions.
+Using parametric equations in SolidWorks made it easier to connect the hand calculations to the CAD model. The final assembly was also useful because it confirmed that the motor fit the mounting pattern and that the overall bracket geometry was reasonable.
 
 ### Mistakes and Improvements
 
-<!-- Complete this section after finishing the assignment. Include any calculation, sketching, or CAD mistakes and how they were corrected. -->
+One challenge during the assignment was keeping the orientation and purpose of Feature 1 and Feature 2 consistent between the FBDs, calculations, and CAD model.
+
+Another challenge was setting up the parametric equations in SolidWorks. Some calculated global variables generated warning symbols because the values were entered as unitless numerical variables, even though the equations still evaluated to the expected results.
+
+If the design were revised, the next improvement would be to optimize the overall amount of material while maintaining the same deflection requirement.
 
 ### Lessons Learned
 
-<!-- Complete after CAD. Briefly explain what you learned from beam bending, parametric design, and creating the motor mount. -->
+This assignment helped reinforce how bending stress and beam deflection can lead to different required dimensions. It also showed how engineering calculations can be connected directly to CAD through parametric variables.
+
+Creating the final motor assembly also showed the importance of checking fit and hole locations instead of relying only on calculations.
 
 ### Time Spent
 
-<!-- Replace with actual total time before submission. -->
-
 The total time spent completing A4 was approximately:
 
-$$\boxed{\text{TBD hours}}$$
+$$\boxed{12\text{ hours}}$$
 
 ---
 
-## CAD Download
+## CAD Downloads
 
-<!-- Add the final SolidWorks part file to docs/assets/files/ and replace the placeholder below. -->
+The completed SolidWorks files are available below:
 
-[Download A4 Motor Mount SolidWorks Part](../../assets/files/A4_Motor_Mount_Florencondia.SLDPRT)
+[Download A4 Motor Mount Part](../../assets/files/A4_Motor_Mount_Florencondia.SLDPRT)
+
+[Download A4 Motor Mount Assembly](../../assets/files/A4_Motor_Mount_Assembly_Florencondia.SLDASM)
+
+[Download A4 Motor Model](../../assets/files/a4_motor.SLDPRT)
 
 ---
 
 ## References
 
-1. Course A4 Motor Mount assignment instructions.
-2. MatWeb — Overview of materials for PETG Copolyester.
-3. Machinery's Handbook — Beam calculations and bending equations.
-4. Motor mount design references used during the research portion of the assignment.
+1. **ABS — SpecialChem:**  
+   [Acrylonitrile Butadiene Styrene (ABS): Uses, Properties & Structure](https://www.specialchem.com/plastics/guide/acrylonitrile-butadiene-styrene-abs-plastic)
+
+2. **PETG — MatWeb:**  
+   [Overview of materials for PETG Copolyester](https://www.matweb.com/search/DataSheet.aspx?MatGUID=4de1c85bb946406a86c52b688e3810d0&ckck=1)
+
+3. **PLA — MatWeb:**  
+   [Overview of materials for Polylactic Acid (PLA) Biopolymer](https://www.matweb.com/search/DataSheet.aspx?MatGUID=ab96a4c0655c4018a8785ac4031b9278&ckck=1)
+
+4. **Machinery's Handbook** — Beam calculations and bending equations.
+
+5. MEGR 2156 A4 Motor Mount assignment instructions.
