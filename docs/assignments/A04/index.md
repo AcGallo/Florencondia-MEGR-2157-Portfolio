@@ -70,6 +70,30 @@ $$\boxed{\sigma_{\text{allow}}=17.13\text{ MPa}}$$
 
 Feature 1 is the vertical plate that attaches directly to the motor.
 
+### Feature 1 Knowns and Unknowns
+
+**Knowns**
+
+$$P=300\text{ N}$$
+
+$$E=3030\text{ MPa}$$
+
+$$S_y=51.4\text{ MPa}$$
+
+$$SF=3$$
+
+$$b=50\text{ mm}$$
+
+$$L_1=50\text{ mm}$$
+
+$$e_1=18\text{ mm}$$
+
+$$\delta_{\max}=0.30\text{ mm}$$
+
+**Unknown**
+
+$$\boxed{h_1=?}$$
+
 > **Figure #2 — Feature 1 free-body diagram and hand calculations**
 <img src="../../assets/images/37.png" alt="Feature 1 free body diagram and hand calculations" style="width:100%; height:auto;">
 
@@ -128,6 +152,32 @@ $$\boxed{h_1=12.2\text{ mm}}$$
 ## Feature 2 – Wall Mounting Plate
 
 Feature 2 is the horizontal plate attached to the rigid wall.
+
+### Feature 2 Knowns and Unknowns
+
+**Knowns**
+
+$$P=300\text{ N}$$
+
+$$E=3030\text{ MPa}$$
+
+$$S_y=51.4\text{ MPa}$$
+
+$$SF=3$$
+
+$$b=50\text{ mm}$$
+
+$$L_2=50\text{ mm}$$
+
+$$\delta_{\max}=0.30\text{ mm}$$
+
+$$x_{\text{mount}}=33.33\text{ mm}$$
+
+$$e_1=18\text{ mm}$$
+
+**Unknown**
+
+$$\boxed{h_2=?}$$
 
 The 50 mm plate was divided into thirds for the wall-mounting hole layout.
 
@@ -198,6 +248,28 @@ $$\boxed{h_2=15.1\text{ mm}}$$
 | Wall Hole Centerline 1 | 16.67 mm |
 | Wall Hole Centerline 2 | 33.33 mm |
 
+### Design Features to Minimize Deflection
+
+The thickness of each feature was selected from the **maximum-deflection requirement** because deflection controlled both designs.
+
+For Feature 1:
+
+$$h_{1,\text{def}}=12.12\text{ mm}>h_{1,\text{stress}}=6.15\text{ mm}$$
+
+Therefore:
+
+$$\boxed{h_1=12.2\text{ mm}}$$
+
+For Feature 2:
+
+$$h_{2,\text{def}}=15.08\text{ mm}>h_{2,\text{stress}}=8.54\text{ mm}$$
+
+Therefore:
+
+$$\boxed{h_2=15.1\text{ mm}}$$
+
+Increasing the feature thickness increases the section moment of inertia and reduces bending deflection. The final design therefore uses the larger deflection-controlled thickness for each feature.
+
 ### Isometric Design Sketch
 
 A hand-drawn isometric sketch was created before modeling the part in SolidWorks. The sketch shows the main dimensions, motor-mounting holes, and wall-mounting holes.
@@ -205,9 +277,9 @@ A hand-drawn isometric sketch was created before modeling the part in SolidWorks
 > **Figure #4 — Hand-drawn isometric motor-mount design**
 <img src="../../assets/images/39.png" alt="Hand drawn isometric motor mount design" style="width:100%; height:auto;">
 
-### Parametric SolidWorks Model
+### Parametric Modeling Techniques
 
-Global variables and equations were entered into SolidWorks so that the calculated dimensions controlled the model.
+Global variables and equations were entered into SolidWorks so that the calculated dimensions controlled the 3D motor-mount model. This allowed changes to the design variables to update the corresponding CAD dimensions parametrically.
 
 The parametric variables included:
 
@@ -225,6 +297,10 @@ The parametric variables included:
 > **Figure #5 — SolidWorks global variables and parametric equations**
 <img src="../../assets/images/40.png" alt="SolidWorks global variables and parametric equations" style="width:100%; height:auto;">
 
+### Clearance Holes for Shaft and Bolts
+
+The design includes clearance features for both the motor shaft and the mounting bolts. The motor shaft opening is based on the **6 mm shaft diameter**, while the M3 bolt holes use **3.4 mm clearance diameters**.
+
 ### Feature 2 Wall-Mounting Holes
 
 The wall-mounting holes were positioned using the 16.67 mm and 33.33 mm parametric locations.
@@ -241,9 +317,9 @@ Feature 1 uses four **3.4 mm M3 clearance holes** positioned on a **22 mm bolt c
 > **Figure #7 — Feature 1 motor-mounting hole pattern**
 <img src="../../assets/images/42.png" alt="Feature 1 motor mounting hole pattern" style="width:100%; height:auto;">
 
-### Final CAD Model
+### 3D CAD Model of the Motor Mount
 
-The final part is a single L-shaped motor mount consisting of Feature 1 and Feature 2.
+The final part is a single L-shaped motor mount consisting of Feature 1 and Feature 2. The calculated feature thicknesses, parametric hole locations, motor shaft opening, and bolt-clearance holes were incorporated into the completed SolidWorks model.
 
 > **Figure #8 — Final parametric motor-mount CAD model**
 <img src="../../assets/images/43.png" alt="Final parametric motor mount CAD model" style="width:100%; height:auto;">
