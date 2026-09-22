@@ -1,300 +1,983 @@
-# A5 — Design for Strength and Stiffness I
+# A5 - Bracket Design
 
 ## Objective
 
-The objective of this assignment was to design a bracket capable of supporting the required horizontal load while satisfying both **strength** and **stiffness** requirements. The bracket was analyzed as a sequence of five connected features, labeled **A through E**, so that the reaction or internal load determined from one feature could be carried into the next. Each feature was evaluated using an appropriate free-body diagram, a strength model, and a stiffness model before the final dimensions were selected.
+The objective of A5 was to design a **symmetric steel bracket** that can slide onto the specified rigid T-beam and support a **3/4 in heavy-duty polyester strap**. The bracket was required to use a **safety factor of 4**, carry a selected strap force between **500 and 800 lbf**, and keep the deflection of each analyzed feature below **0.005 in**.
 
-The design was completed using a **factor of safety of 4** and a maximum allowable deflection of **0.005 in per feature**. Direct shear failure was neglected as instructed, and shear deformation was assumed negligible during stiffness analysis.
+For this design, I selected:
 
-> **Figure 46 — Assignment geometry and feature identification used for the A5 bracket analysis**
+- **Material:** ASTM A36 Steel
+- **Load per strap leg:** \(F=650\text{ lbf}\)
+- **Total load transferred into the center of the bracket:** \(2F=1300\text{ lbf}\)
+- **Yield strength:** \(S_y=36,000\text{ psi}\)
+- **Modulus of elasticity:** \(E=29\times10^6\text{ psi}\)
+- **Safety factor:** \(SF=4\)
+- **Maximum feature deflection:** \(\delta_{\max}=0.005\text{ in}\)
 
-<img src="../../assets/images/46.png" alt="A5 assignment geometry and labeled bracket features" style="width:100%; height:auto;">
+The allowable normal stress is:
 
----
+$$
+\sigma_{\text{allow}}=\frac{S_y}{SF}
+$$
 
-# Design Inputs and Assumptions
+$$
+\sigma_{\text{allow}}=\frac{36,000}{4}
+$$
 
-The bracket was analyzed using a design load within the required range of **500–800 lbf** and one of the permitted engineering materials. Material properties were kept consistent throughout the strength and stiffness calculations.
+$$
+\boxed{\sigma_{\text{allow}}=9,000\text{ psi}}
+$$
 
-The following assumptions were used throughout the analysis:
-
-- The applied loading is symmetric where the geometry permits.
-- The material remains within the linear-elastic range.
-- Direct shear failure is neglected as specified by the assignment.
-- Shear deformation is neglected for stiffness calculations.
-- Idealized beam and axial-member models are used where appropriate.
-- Loads and reactions obtained from earlier features are transferred into later feature analyses.
-- The final design dimension for each feature is selected from the more restrictive of the strength and stiffness requirements.
-
----
-
-# 1. Strength Analysis
-
-The strength analysis was performed first to determine the minimum dimensions required to prevent yielding. For each feature, the allowable stress was determined from the selected material yield strength and the required factor of safety:
-
-$$\sigma_{\text{allow}}=\frac{S_y}{SF}$$
-
-with
-
-$$SF=4$$
-
-The load path was followed from Feature A through Feature E so that each reaction could be used in the next stage of the analysis.
+> **Figure A5-1 - Assignment geometry, T-beam dimensions, and polyester strap loading**
+<img src="../../assets/images/46.png" alt="A5 assignment geometry showing T-beam dimensions and polyester strap loading" style="width:100%; height:auto;">
 
 ---
 
-## Feature A — Strength
+## Analyze
 
-Feature A forms the lower cylindrical member and is treated as a **cantilever beam** according to the guidance provided in Appendix D. The applied strap load produces bending in the member, so the section was sized using the maximum bending-stress requirement.
+### T-Beam Geometry and Required Clearance
 
-The analysis begins by determining the internal bending moment from the applied load and geometry. The required section size is then obtained by limiting the maximum bending stress to the allowable material stress.
+The rigid T-beam dimensions provided for the assignment were:
 
-> **Figure 47 — Feature A free-body diagram and strength calculations**
+| Dimension | Nominal Size | Tolerance |
+|---|---:|---:|
+| \(a\) | 0.498 in | \(+0.000/-0.001\) in |
+| \(b\) | 0.9992 in | \(+0.0000/-0.0005\) in |
+| \(c\) | 1.499 in | \(+0.000/-0.001\) in |
 
-<img src="../../assets/images/47.png" alt="Feature A strength free body diagram and calculations" style="width:100%; height:auto;">
+Because each tolerance only allows the T-beam to become smaller than the nominal value, the **nominal dimensions are the largest fit condition**. I therefore used the nominal dimensions and added approximately **0.050 in of clearance per side** where the bracket slides around the rail.
 
-The governing strength relationship is based on bending:
+The horizontal opening is:
 
-$$\sigma_{\max}=\frac{M}{Z}$$
+$$
+L_C=a+2b+0.100
+$$
 
-where \(M\) is the maximum bending moment and \(Z\) is the section modulus of the cylindrical member.
+$$
+L_C=0.498+2(0.9992)+0.100
+$$
 
-The resulting minimum Feature A dimension was carried forward into the geometry used for Feature B.
+$$
+\boxed{L_C=2.5964\text{ in}}
+$$
 
----
+The vertical opening is:
 
-## Feature B — Strength
+$$
+L_D=c+0.100
+$$
 
-Feature B transfers the load vertically through the bracket and was modeled as an **axially loaded member**. The reaction obtained from Feature A was used as the applied axial force for this portion of the analysis.
+$$
+L_D=1.499+0.100
+$$
 
-> **Figure 48 — Feature B free-body diagram and axial-strength calculations**
+$$
+\boxed{L_D=1.599\text{ in}}
+$$
 
-<img src="../../assets/images/48.png" alt="Feature B strength free body diagram and calculations" style="width:100%; height:auto;">
+Each upper arm extends inward by the flange dimension:
 
-The average normal stress was determined from:
+$$
+\boxed{L_E=b=0.9992\text{ in}}
+$$
 
-$$\sigma=\frac{F}{A}$$
+The center opening between the two upper arms is:
 
-The minimum cross-sectional area was obtained by requiring:
+$$
+2.5964-2(0.9992)=\boxed{0.5980\text{ in}}
+$$
 
-$$\sigma\leq\sigma_{\text{allow}}$$
+This provides approximately 0.050 in of clearance on each side of the \(0.498\) in T-beam stem.
 
-The resulting Feature B dimension establishes the minimum section required to carry the transferred axial load without yielding.
+### Rough Design Concept
 
----
+I used a symmetric bracket because it keeps the T-beam centered and makes the load path easier to analyze. The design was divided into five features:
 
-## Feature C — Strength
+- **Feature A:** cylindrical strap support
+- **Feature B:** vertical connector between A and C
+- **Feature C:** lower horizontal member
+- **Feature D:** vertical side member
+- **Feature E:** upper horizontal arm
 
-Feature C was modeled as a **simply supported beam with a concentrated load at its center**, following the guidance in Appendix D. The reaction forces were first determined using equilibrium, followed by calculation of the maximum bending moment.
+The rough multiview sketch was used to establish the variables before the stress and stiffness calculations were completed.
 
-> **Figure 49 — Feature C free-body diagram, support reactions, and bending-strength calculations**
-
-<img src="../../assets/images/49.png" alt="Feature C strength free body diagram and bending calculations" style="width:100%; height:auto;">
-
-The maximum bending stress was evaluated using:
-
-$$\sigma_{\max}=\frac{M_{\max}}{Z}$$
-
-The section geometry was then sized so that the calculated bending stress remained below the allowable stress.
-
----
-
-## Feature D — Strength
-
-Feature D transfers the loading from the upper portion of the bracket into the surrounding frame. The free-body diagram was created from the actual load path so that the internal force and moment acting on the feature could be identified before selecting the appropriate stress model.
-
-> **Figure 50 — Feature D free-body diagram and strength calculations**
-
-<img src="../../assets/images/50.png" alt="Feature D strength free body diagram and calculations" style="width:100%; height:auto;">
-
-The resulting section dimensions were selected so that the maximum calculated normal or bending stress remained within the allowable stress for the chosen material.
-
----
-
-## Feature E — Strength
-
-Feature E completes the load path into the upper bracket geometry. The reaction transferred from Feature D was applied to the Feature E free-body diagram and used to determine the final strength-based section requirement.
-
-> **Figure 51 — Feature E free-body diagram and strength calculations**
-
-<img src="../../assets/images/51.png" alt="Feature E strength free body diagram and calculations" style="width:100%; height:auto;">
-
-The final Feature E strength dimension was determined using the governing normal or bending-stress condition from the completed free-body diagram.
+> **Figure A5-2 - Rough multiview concept and feature-variable layout**
+<img src="../../assets/images/47.png" alt="Rough A5 bracket multiview sketch with Features A through E" style="width:100%; height:auto;">
 
 ---
 
-## Strength-Based Multiview Drawing
+## Feature A - Cylindrical Strap Support
 
-After completing all five strength calculations, the resulting dimensions were assembled into a complete multiview drawing. This drawing represents the bracket if **strength alone** governed the design.
+Feature A is modeled as a **circular cantilever beam** fixed at Feature B. The drawing convention defines \(L_A=1.000\) in as the **overall** length of Feature A, including the portion overlapped by Feature B. For the analytical model, the full \(1.000\) in length is conservatively used as the cantilever span with the total strap load uniformly distributed across it. Because the actual exposed span is shorter once the Feature B overlap is considered, this assumption does not underpredict the bending demand.
 
-> **Figure 52 — Detailed multiview drawing using the strength-based dimensions**
+### Knowns and Unknown
 
-<img src="../../assets/images/52.png" alt="Strength based A5 bracket multiview drawing" style="width:100%; height:auto;">
+$$
+W=2F=1300\text{ lbf}
+$$
+
+$$
+L_A=1.000\text{ in}
+$$
+
+$$
+E=29\times10^6\text{ psi}
+$$
+
+$$
+\sigma_{\text{allow}}=9000\text{ psi}
+$$
+
+$$
+\delta_{\max}=0.005\text{ in}
+$$
+
+Unknown:
+
+$$
+\boxed{D_A=?}
+$$
+
+### Assumptions
+
+Feature A is assumed to have a constant circular cross section, Feature B acts as the fixed support, the strap load is uniformly distributed across the analytical length, self-weight is neglected, and direct shear failure is neglected as permitted by the assignment.
+
+> **Figure A5-3 - Feature A free-body diagram**
+<img src="../../assets/images/48.png" alt="Feature A free body diagram showing uniform distributed load and cantilever support" style="width:100%; height:auto;">
+
+### Stress Analysis
+
+For a cantilever carrying a total uniformly distributed load \(W\):
+
+$$
+M_{\max}=\frac{WL_A}{2}
+$$
+
+$$
+M_{\max}=\frac{(1300)(1.000)}{2}
+$$
+
+$$
+\boxed{M_{\max}=650\text{ lbf}\cdot\text{in}}
+$$
+
+For a circular section:
+
+$$
+S=\frac{\pi D_A^3}{32}
+$$
+
+Using:
+
+$$
+\sigma=\frac{M}{S}
+$$
+
+and setting \(\sigma=\sigma_{\text{allow}}\):
+
+$$
+9000=\frac{32(650)}{\pi D_A^3}
+$$
+
+Solving for diameter:
+
+$$
+D_{A,\text{stress}}
+=
+\sqrt[3]{\frac{32(650)}{\pi(9000)}}
+$$
+
+$$
+\boxed{D_{A,\text{stress}}=0.9027\text{ in}}
+$$
+
+### Stiffness Analysis
+
+For a cantilever with a uniformly distributed total load:
+
+$$
+\delta=\frac{WL_A^3}{8EI}
+$$
+
+For a circular section:
+
+$$
+I=\frac{\pi D_A^4}{64}
+$$
+
+Substituting and solving for \(D_A\):
+
+$$
+D_{A,\text{stiff}}
+=
+\sqrt[4]{\frac{8WL_A^3}{\pi E\delta_{\max}}}
+$$
+
+$$
+D_{A,\text{stiff}}
+=
+\sqrt[4]{\frac{8(1300)(1.000)^3}{\pi(29\times10^6)(0.005)}}
+$$
+
+$$
+\boxed{D_{A,\text{stiff}}=0.3887\text{ in}}
+$$
+
+Stress controls Feature A because:
+
+$$
+0.9027>0.3887
+$$
+
+The final selected diameter was rounded upward to:
+
+$$
+\boxed{D_A=1.000\text{ in}}
+$$
 
 ---
 
-# 2. Stiffness Analysis
+## Feature B - Vertical Connector
 
-The complete bracket was then analyzed a second time using the assignment stiffness requirement. Each feature was independently limited to a maximum deformation of:
+Feature B transfers the full \(1300\) lbf load from Feature A into Feature C and is modeled as an **axially loaded rectangular member**.
 
-$$\delta_{\max}=0.005\text{ in}$$
+### Knowns and Unknown
 
-The same load path used during the strength analysis was maintained so that the stiffness calculations remained consistent with the previously determined reactions.
+$$
+P_B=1300\text{ lbf}
+$$
 
----
+$$
+L_B=0.750\text{ in}
+$$
 
-## Feature A — Stiffness
+$$
+w_B=0.498\text{ in}
+$$
 
-Feature A was again modeled as a cantilever beam. Instead of limiting stress, the section size was selected so that the maximum deflection did not exceed the allowable value.
+$$
+E=29\times10^6\text{ psi}
+$$
 
-> **Figure 53 — Feature A free-body diagram and stiffness calculations**
+$$
+\sigma_{\text{allow}}=9000\text{ psi}
+$$
 
-<img src="../../assets/images/53.png" alt="Feature A stiffness free body diagram and calculations" style="width:100%; height:auto;">
+$$
+\delta_{\max}=0.005\text{ in}
+$$
 
-The elastic beam-deflection model was evaluated using the selected material modulus of elasticity and the Feature A geometry. The section dimension was then solved from the requirement:
+Unknown:
 
-$$\delta_A\leq0.005\text{ in}$$
+$$
+\boxed{T_B=?}
+$$
 
----
+The \(0.498\) in width matches dimension \(a\) so Feature B stays centered under the T-beam stem. The \(0.750\) in vertical length is measured from the **top of Feature A to the bottom of Feature C** and was selected to provide clearance between the cylindrical strap support and the lower bracket member.
 
-## Feature B — Stiffness
+### Assumptions
 
-Because Feature B behaves primarily as an axially loaded member, its elastic deformation was determined using:
+The load is centered through the rectangular cross section, bending is neglected, the cross section is uniform, and direct shear failure is neglected.
 
-$$\delta=\frac{FL}{AE}$$
+> **Figure A5-4 - Feature B free-body diagram**
+<img src="../../assets/images/49.png" alt="Feature B axial free body diagram" style="width:100%; height:auto;">
 
-> **Figure 54 — Feature B axial-deformation and stiffness calculations**
+### Stress Analysis
 
-<img src="../../assets/images/54.png" alt="Feature B axial deformation and stiffness calculations" style="width:100%; height:auto;">
+The cross-sectional area is:
 
-The minimum Feature B area was selected so that:
+$$
+A_B=w_BT_B
+$$
 
-$$\delta_B\leq0.005\text{ in}$$
+Axial stress is:
 
-This requirement was then converted into the corresponding physical section dimension used in the bracket model.
+$$
+\sigma=\frac{P_B}{A_B}
+$$
 
----
+Solving for thickness:
 
-## Feature C — Stiffness
+$$
+T_{B,\text{stress}}
+=
+\frac{P_B}{w_B\sigma_{\text{allow}}}
+$$
 
-Feature C was modeled as a simply supported beam with a concentrated center load. The same reactions and loading pattern used during the strength calculation were applied to the beam-deflection model.
+$$
+T_{B,\text{stress}}
+=
+\frac{1300}{(0.498)(9000)}
+$$
 
-> **Figure 55 — Feature C free-body diagram and stiffness calculations**
+$$
+\boxed{T_{B,\text{stress}}=0.2900\text{ in}}
+$$
 
-<img src="../../assets/images/55.png" alt="Feature C stiffness free body diagram and calculations" style="width:100%; height:auto;">
+### Stiffness Analysis
 
-The required section dimension was obtained by limiting the maximum beam deflection to:
+Axial deformation is:
 
-$$\delta_C\leq0.005\text{ in}$$
+$$
+\delta=\frac{PL}{AE}
+$$
 
----
+Solving for \(T_B\):
 
-## Feature D — Stiffness
+$$
+T_{B,\text{stiff}}
+=
+\frac{P_BL_B}{Ew_B\delta_{\max}}
+$$
 
-Feature D was evaluated using the elastic deformation model corresponding to its load path and support condition. The same idealization used in the strength analysis was retained so that the two resulting dimensions could be compared directly.
+$$
+T_{B,\text{stiff}}
+=
+\frac{(1300)(0.750)}
+{(29\times10^6)(0.498)(0.005)}
+$$
 
-> **Figure 56 — Feature D free-body diagram and stiffness calculations**
+$$
+\boxed{T_{B,\text{stiff}}=0.01350\text{ in}}
+$$
 
-<img src="../../assets/images/56.png" alt="Feature D stiffness free body diagram and calculations" style="width:100%; height:auto;">
+Stress controls Feature B.
 
-The section was sized so that the calculated deformation remained below the 0.005 in limit.
+The final selected thickness was:
 
----
+$$
+\boxed{T_B=0.375\text{ in}}
+$$
 
-## Feature E — Stiffness
-
-The final stiffness analysis was performed on Feature E using the reaction transferred from Feature D. The section dimensions were solved from the elastic deformation requirement and compared with the previously determined strength dimensions.
-
-> **Figure 57 — Feature E free-body diagram and stiffness calculations**
-
-<img src="../../assets/images/57.png" alt="Feature E stiffness free body diagram and calculations" style="width:100%; height:auto;">
-
-The selected stiffness-based dimension satisfies:
-
-$$\delta_E\leq0.005\text{ in}$$
-
----
-
-## Stiffness-Based Multiview Drawing
-
-A second detailed multiview drawing was created using the dimensions obtained from the stiffness analysis. This drawing shows how the bracket geometry changes when deformation, rather than yielding, controls the design.
-
-> **Figure 58 — Detailed multiview drawing using the stiffness-based dimensions**
-
-<img src="../../assets/images/58.png" alt="Stiffness based A5 bracket multiview drawing" style="width:100%; height:auto;">
-
----
-
-# 3. Governing Dimensions
-
-The strength and stiffness results were compared feature-by-feature. The final design uses the larger required dimension in each case:
-
-$$\boxed{\text{Final dimension}=\max\left(\text{strength requirement},\text{stiffness requirement}\right)}$$
-
-This approach ensures that every feature satisfies both the material strength requirement and the allowable-deflection requirement.
-
-| Feature | Strength Analysis | Stiffness Analysis | Governing Requirement |
-|---|---|---|---|
-| **A** | See Figure 47 | See Figure 53 | Larger calculated requirement |
-| **B** | See Figure 48 | See Figure 54 | Larger calculated requirement |
-| **C** | See Figure 49 | See Figure 55 | Larger calculated requirement |
-| **D** | See Figure 50 | See Figure 56 | Larger calculated requirement |
-| **E** | See Figure 51 | See Figure 57 | Larger calculated requirement |
-
-The governing dimensions from this comparison were used to build the final parametric CAD model.
-
----
-
-# 4. Final CAD Model
-
-The final bracket was modeled in SolidWorks using the governing dimensions determined from the strength and stiffness comparison. The CAD model preserves the load path used during the analytical work and incorporates the required interface geometry for the T-beam and strap system.
-
-> **Figure 59 — Final A5 bracket CAD model**
-
-<img src="../../assets/images/59.png" alt="Final A5 bracket CAD model" style="width:100%; height:auto;">
-
-The finished model was checked against the calculated dimensions before preparing the final deliverable.
-
-> **Figure 60 — Final CAD model with dimensional verification**
-
-<img src="../../assets/images/60.png" alt="Final A5 CAD model dimensional verification" style="width:100%; height:auto;">
-
-### CAD Files
-
-- [Download the A5 SolidWorks Part](../../assets/files/A5_Bracket_Florencondia.SLDPRT)
-- [Download the A5 supporting CAD file](../../assets/files/A5_Bracket_Support_Florencondia.SLDPRT)
+For the drawing convention used in this project, \(L_A=1.000\) in is the **overall** Feature A length and Feature B overlaps a portion of that length. Therefore, the exposed portion of Feature A is \(L_{A,\mathrm{exposed}}=L_A-T_B\).
 
 ---
 
-# 5. Lessons Learned
+## Feature C - Lower Horizontal Member
 
-## Governing Failure Mode
+Feature C carries the full \(2F=1300\) lbf load at its center. Because the bracket is symmetric, the two side members each provide a reaction of \(F=650\) lbf.
 
-One of the most important observations from this assignment was that **strength and stiffness do not necessarily produce the same minimum geometry**. A feature can remain safely below the material yield stress while still deflecting more than the design allows. Comparing both requirements before choosing the final dimension prevents a design from being technically strong enough but functionally too flexible.
+### Knowns and Unknown
 
-For each feature, the governing dimension was therefore selected from the larger of the stress-based and stiffness-based requirements rather than assuming that material strength alone controlled the design.
+$$
+P_C=1300\text{ lbf}
+$$
 
-## Error Propagation
+$$
+L_C=2.5964\text{ in}
+$$
 
-The feature-by-feature load path made it clear that an error early in the analysis can propagate into later calculations. Reaction forces determined from one free-body diagram become applied loads for the next feature, so each equilibrium calculation was checked before being carried forward.
+$$
+w_C=1.000\text{ in}
+$$
 
-This was especially important when moving from Feature A into the remaining bracket geometry. Verifying the force direction, magnitude, and units before beginning the next analysis prevented an incorrect reaction from affecting multiple downstream dimensions.
+$$
+E=29\times10^6\text{ psi}
+$$
 
-## Assumption Sensitivity
+$$
+\sigma_{\text{allow}}=9000\text{ psi}
+$$
 
-The final geometry depends strongly on the assumptions used in the analytical model. In particular, the selected material modulus of elasticity directly affects the stiffness-based dimensions. A material with a lower modulus would require larger sections to maintain the same 0.005 in deflection limit even if its yield strength were comparable.
+$$
+\delta_{\max}=0.005\text{ in}
+$$
 
-The assumption that shear deformation is negligible also simplifies the stiffness analysis. If shear deformation became significant because of a short or thick member geometry, the actual total deformation would be larger than the beam-only prediction and the required section size could increase.
+Unknown:
+
+$$
+\boxed{T_C=?}
+$$
+
+### Assumptions
+
+Feature C is treated as a simply supported rectangular beam with a center point load. The two reactions are equal because of symmetry. Shear deformation and self-weight are neglected.
+
+> **Figure A5-5 - Feature C free-body diagram**
+<img src="../../assets/images/50.png" alt="Feature C free body diagram showing center load and two reactions" style="width:100%; height:auto;">
+
+### Stress Analysis
+
+For a simply supported beam with a center point load:
+
+$$
+M_{\max}=\frac{P_CL_C}{4}
+$$
+
+$$
+M_{\max}=\frac{(1300)(2.5964)}{4}
+$$
+
+$$
+\boxed{M_{\max}=843.83\text{ lbf}\cdot\text{in}}
+$$
+
+For a rectangular section:
+
+$$
+S=\frac{w_CT_C^2}{6}
+$$
+
+Therefore:
+
+$$
+T_{C,\text{stress}}
+=
+\sqrt{\frac{6M_{\max}}
+{w_C\sigma_{\text{allow}}}}
+$$
+
+$$
+T_{C,\text{stress}}
+=
+\sqrt{\frac{6(843.83)}
+{(1.000)(9000)}}
+$$
+
+$$
+\boxed{T_{C,\text{stress}}=0.7500\text{ in}}
+$$
+
+### Stiffness Analysis
+
+For a simply supported beam with a center point load:
+
+$$
+\delta=\frac{P_CL_C^3}{48EI}
+$$
+
+with:
+
+$$
+I=\frac{w_CT_C^3}{12}
+$$
+
+Solving for thickness:
+
+$$
+T_{C,\text{stiff}}
+=
+\sqrt[3]{\frac{P_CL_C^3}
+{4Ew_C\delta_{\max}}}
+$$
+
+$$
+T_{C,\text{stiff}}
+=
+\sqrt[3]{\frac{(1300)(2.5964)^3}
+{4(29\times10^6)(1.000)(0.005)}}
+$$
+
+$$
+\boxed{T_{C,\text{stiff}}=0.3398\text{ in}}
+$$
+
+Stress controls Feature C.
+
+The final selected thickness was:
+
+$$
+\boxed{T_C=0.875\text{ in}}
+$$
 
 ---
 
-# Conclusion
+## Feature D - Vertical Side Member
 
-This assignment demonstrated the difference between designing for **strength** and designing for **stiffness**. The bracket was treated as a connected load path rather than as a single isolated component, allowing each reaction to be transferred into the next feature analysis. Five strength analyses and five stiffness analyses were completed, followed by a comparison of the resulting dimensions.
+Feature D transfers the load between the lower member and the upper arm. An important correction was made during the double-checking stage: the early sketch treated D as primarily axial, but Feature E creates an **eccentric prying moment** at D. The final sizing therefore treats D as a vertical cantilever subjected to the end moment created by Feature E.
 
-The final CAD geometry was selected using the governing requirement for each feature so that the bracket satisfies both the material strength limit and the maximum allowable deformation requirement. The completed design process combines equilibrium, stress analysis, elastic deformation, free-body diagrams, and parametric CAD into a single reproducible engineering workflow.
+> **Figure A5-6 - Preliminary Feature D load-path sketch**
+<img src="../../assets/images/51.png" alt="Preliminary Feature D load path sketch" style="width:100%; height:auto;">
+
+### Knowns and Unknown
+
+$$
+F=650\text{ lbf}
+$$
+
+$$
+L_D=1.599\text{ in}
+$$
+
+$$
+L_E=0.9992\text{ in}
+$$
+
+$$
+w_D=1.000\text{ in}
+$$
+
+$$
+E=29\times10^6\text{ psi}
+$$
+
+$$
+\sigma_{\text{allow}}=9000\text{ psi}
+$$
+
+$$
+\delta_{\max}=0.005\text{ in}
+$$
+
+Unknown:
+
+$$
+\boxed{T_D=?}
+$$
+
+### End Moment from Feature E
+
+The force on E produces:
+
+$$
+M_D=FL_E
+$$
+
+$$
+M_D=(650)(0.9992)
+$$
+
+$$
+\boxed{M_D=649.48\text{ lbf}\cdot\text{in}}
+$$
+
+### Stress Analysis
+
+For the rectangular D cross section:
+
+$$
+S_D=\frac{w_DT_D^2}{6}
+$$
+
+Therefore:
+
+$$
+T_{D,\text{stress}}
+=
+\sqrt{\frac{6M_D}
+{w_D\sigma_{\text{allow}}}}
+$$
+
+$$
+T_{D,\text{stress}}
+=
+\sqrt{\frac{6(649.48)}
+{(1.000)(9000)}}
+$$
+
+$$
+\boxed{T_{D,\text{stress}}=0.6580\text{ in}}
+$$
+
+### Stiffness Analysis
+
+For a cantilever of length \(L_D\) with an applied end moment:
+
+$$
+\delta=\frac{M_DL_D^2}{2EI}
+$$
+
+and:
+
+$$
+I=\frac{w_DT_D^3}{12}
+$$
+
+Solving for thickness:
+
+$$
+T_{D,\text{stiff}}
+=
+\sqrt[3]{\frac{6M_DL_D^2}
+{Ew_D\delta_{\max}}}
+$$
+
+$$
+T_{D,\text{stiff}}
+=
+\sqrt[3]{\frac{6(649.48)(1.599)^2}
+{(29\times10^6)(1.000)(0.005)}}
+$$
+
+$$
+\boxed{T_{D,\text{stiff}}=0.4096\text{ in}}
+$$
+
+Stress controls Feature D.
+
+The final selected thickness was:
+
+$$
+\boxed{T_D=0.750\text{ in}}
+$$
+
+As an additional conservative check, if the \(650\) lbf axial force shown in the preliminary sketch is superimposed on the bending stress for the final \(0.750\) in section:
+
+$$
+\sigma_{\text{combined}}
+\approx
+\frac{6M_D}{w_DT_D^2}
++
+\frac{F}{w_DT_D}
+$$
+
+$$
+\sigma_{\text{combined}}
+\approx
+6928+867
+$$
+
+$$
+\boxed{\sigma_{\text{combined}}\approx7795\text{ psi}<9000\text{ psi}}
+$$
+
+The final selected D thickness therefore remains below the allowable normal stress even under this more conservative check.
 
 ---
 
-# Time Spent
+## Feature E - Upper Horizontal Arm
 
-Approximately **___ hours** were spent completing the analysis, drawings, CAD model, and documentation for this assignment.
+Feature E closes over the T-beam flange. The early sketch was used to establish its geometry and load path, while the final analytical model treats E as a **horizontal cantilever** with a downward end load \(F\).
+
+> **Figure A5-7 - Preliminary Feature E load-path sketch**
+<img src="../../assets/images/52.png" alt="Preliminary Feature E load path sketch" style="width:100%; height:auto;">
+
+### Knowns and Unknown
+
+$$
+F=650\text{ lbf}
+$$
+
+$$
+L_E=0.9992\text{ in}
+$$
+
+$$
+w_E=1.000\text{ in}
+$$
+
+$$
+E=29\times10^6\text{ psi}
+$$
+
+$$
+\sigma_{\text{allow}}=9000\text{ psi}
+$$
+
+$$
+\delta_{\max}=0.005\text{ in}
+$$
+
+Unknown:
+
+$$
+\boxed{T_E=?}
+$$
+
+### Stress Analysis
+
+The maximum moment at the fixed end is:
+
+$$
+M_E=FL_E
+$$
+
+$$
+M_E=(650)(0.9992)
+$$
+
+$$
+\boxed{M_E=649.48\text{ lbf}\cdot\text{in}}
+$$
+
+For a rectangular section:
+
+$$
+T_{E,\text{stress}}
+=
+\sqrt{\frac{6M_E}
+{w_E\sigma_{\text{allow}}}}
+$$
+
+$$
+\boxed{T_{E,\text{stress}}=0.6580\text{ in}}
+$$
+
+### Stiffness Analysis
+
+For a cantilever with a point load at the free end:
+
+$$
+\delta=\frac{FL_E^3}{3EI}
+$$
+
+with:
+
+$$
+I=\frac{w_ET_E^3}{12}
+$$
+
+Solving for \(T_E\):
+
+$$
+T_{E,\text{stiff}}
+=
+\sqrt[3]{\frac{4FL_E^3}
+{Ew_E\delta_{\max}}}
+$$
+
+$$
+T_{E,\text{stiff}}
+=
+\sqrt[3]{\frac{4(650)(0.9992)^3}
+{(29\times10^6)(1.000)(0.005)}}
+$$
+
+$$
+\boxed{T_{E,\text{stiff}}=0.2615\text{ in}}
+$$
+
+Stress controls Feature E.
+
+The final selected thickness was:
+
+$$
+\boxed{T_E=0.750\text{ in}}
+$$
+
+---
+
+## Stress and Stiffness Comparison
+
+The calculated minimum dimensions are summarized below.
+
+| Feature | Stress Minimum | Stiffness Minimum | Governing Requirement | Final Selected |
+|---|---:|---:|---|---:|
+| A - diameter | 0.9027 in | 0.3887 in | Stress | 1.000 in |
+| B - thickness | 0.2900 in | 0.01350 in | Stress | 0.375 in |
+| C - height | 0.7500 in | 0.3398 in | Stress | 0.875 in |
+| D - thickness | 0.6580 in | 0.4096 in | Stress | 0.750 in |
+| E - thickness | 0.6580 in | 0.2615 in | Stress | 0.750 in |
+
+For all five features, the **stress requirement governs** over the stiffness requirement.
+
+---
+
+## Stress-Based Multiview
+
+The stress multiview uses the calculated minimum dimensions from the stress analysis while retaining the fixed T-beam fit dimensions. The drawing is explicitly marked **NOT TO SCALE (NTS)**. The dimension callouts define the geometry; distances measured directly from the paper are not intended to equal the calculated dimensions.
+
+Important stress dimensions are:
+
+$$
+D_A=0.9027\text{ in}
+$$
+
+$$
+T_B=0.2900\text{ in}
+$$
+
+$$
+T_C=0.7500\text{ in}
+$$
+
+$$
+T_D=0.6580\text{ in}
+$$
+
+$$
+T_E=0.6580\text{ in}
+$$
+
+The stress-based overall D-to-D width is:
+
+$$
+2.5964+2(0.6580)=\boxed{3.9124\text{ in}}
+$$
+
+The stress-based bottom-of-C to top-of-E height is approximately:
+
+$$
+0.7500+1.599+0.6580
+=
+\boxed{3.0070\text{ in}}
+$$
+
+> **Figure A5-8 - Stress-based multiview drawing**
+<img src="../../assets/images/53.png" alt="Stress based multiview drawing of A5 bracket" style="width:100%; height:auto;">
+
+---
+
+## Stiffness-Based Multiview
+
+The stiffness multiview uses the **same front, top, and right-view layout and the same sketch proportions** as the stress multiview. Only the dimensions controlled by stiffness are replaced by the calculated stiffness minimums. This drawing is explicitly **NOT TO SCALE (NTS)**, so the apparent size of a feature on paper does not need to shrink in proportion to its numerical stiffness value. The written dimension callouts are authoritative.
+
+The stiffness dimensions are:
+
+$$
+D_A=0.3887\text{ in}
+$$
+
+$$
+T_B=0.01350\text{ in}
+$$
+
+$$
+T_C=0.3398\text{ in}
+$$
+
+$$
+T_D=0.4096\text{ in}
+$$
+
+$$
+T_E=0.2615\text{ in}
+$$
+
+The stiffness-based overall D-to-D width is approximately:
+
+$$
+2.5964+2(0.4096)
+=
+\boxed{3.4156\text{ in}}
+$$
+
+The stiffness-based bottom-of-C to top-of-E height is approximately:
+
+$$
+0.3398+1.599+0.2615
+=
+\boxed{2.2003\text{ in}}
+$$
+
+> **Figure A5-9 - Stiffness-based multiview drawing**
+<img src="../../assets/images/54.png" alt="Stiffness based multiview drawing of A5 bracket" style="width:100%; height:auto;">
+
+---
+
+## Decide
+
+### Final CAD Dimensions
+
+The calculated minimum values were rounded upward to practical dimensions for the final CAD model.
+
+| Feature / Parameter | Final Value |
+|---|---:|
+| Material | ASTM A36 Steel |
+| Feature A diameter, \(D_A\) | 1.000 in |
+| Feature A overall length, \(L_A\) | 1.000 in |
+| Feature B front-view width | 0.498 in |
+| Feature B vertical length, \(L_B\) | 0.750 in |
+| Feature B thickness, \(T_B\) | 0.375 in |
+| Feature C inside span, \(L_C\) | 2.5964 in |
+| Feature C depth, \(w_C\) | 1.000 in |
+| Feature C height, \(T_C\) | 0.875 in |
+| Feature D vertical opening/height, \(L_D\) | 1.599 in |
+| Feature D depth, \(w_D\) | 1.000 in |
+| Feature D thickness, \(T_D\) | 0.750 in |
+| Feature E reach, \(L_E\) | 0.9992 in |
+| Feature E depth, \(w_E\) | 1.000 in |
+| Feature E thickness, \(T_E\) | 0.750 in |
+| Top center opening | 0.5980 in |
+| Overall D-to-D width | 4.0964 in |
+| Bottom of C to top of E | 3.224 in |
+
+The final overall width is:
+
+$$
+2.5964+2(0.750)
+=
+\boxed{4.0964\text{ in}}
+$$
+
+The final C-to-E height is:
+
+$$
+0.875+1.599+0.750
+=
+\boxed{3.224\text{ in}}
+$$
+
+### Final Analytical Verification
+
+The rounded CAD dimensions were checked again against the same stress and stiffness equations.
+
+| Feature | Final Stress | Allowable Stress | Final Deflection | Allowed Deflection |
+|---|---:|---:|---:|---:|
+| A | 6,621 psi | 9,000 psi | 0.000114 in | 0.005 in |
+| B | 6,961 psi | 9,000 psi | 0.000180 in | 0.005 in |
+| C | 6,613 psi | 9,000 psi | 0.000293 in | 0.005 in |
+| D | 6,928 psi bending | 9,000 psi | 0.000814 in | 0.005 in |
+| E | 6,928 psi | 9,000 psi | 0.000212 in | 0.005 in |
+
+All five final feature dimensions satisfy both the allowable stress and maximum-deflection requirements.
+
+### Final CAD Model
+
+The final SolidWorks model uses the rounded dimensions rather than the exact analytical minimums. This provides manufacturing margin while keeping the geometry simple and symmetric.
+
+> **Figure A5-10 - Final A5 bracket CAD model**
+<img src="../../assets/images/55.png" alt="Final CAD model of A5 bracket" style="width:100%; height:auto;">
+
+---
+
+## Communicate
+
+### Design Summary
+
+The final bracket uses **ASTM A36 steel**, a selected strap force of **650 lbf per leg**, and a required safety factor of **4**. The load path was divided into five features and each feature was checked independently for both stress and stiffness.
+
+The calculations showed that **stress governed all five features**. The final CAD dimensions were therefore rounded upward from the stress-controlled minimums:
+
+$$
+\boxed{
+D_A=1.000,\;
+T_B=0.375,\;
+T_C=0.875,\;
+T_D=0.750,\;
+T_E=0.750\text{ in}
+}
+$$
+
+The final bracket also includes approximately **0.050 in clearance per side** around the critical T-beam dimensions so that the part can slide onto the rail without relying on an interference fit.
+
+### Error Propagation and Double-Checking
+
+A major part of this assignment was making sure one incorrect assumption did not propagate into every later feature. The most important example was the connection between Features D and E. An early sketch treated the side wall as axial, but the load on E is offset from D and therefore creates a prying moment. Rechecking the load path changed the final D analytical model to bending.
+
+The geometry also required repeated checking because the T-beam dimensions determine \(L_C\), \(L_D\), \(L_E\), and the top opening. Changing one of those values changes several other dimensions. Keeping the fixed fit dimensions separate from the stress- and stiffness-controlled dimensions made the final drawings more consistent.
+
+### Lessons Learned
+
+This assignment reinforced that the hardest part of an engineering calculation is often not the algebra itself, but choosing the correct model before using the equation. The free-body diagrams took a large amount of time because each support, reaction, and load path had to agree with the actual bracket geometry.
+
+I also learned the importance of separating three different types of dimensions: dimensions required for **fit**, dimensions calculated from **stress or stiffness**, and dimensions finally selected for **manufacturing/CAD**. The analytical result gives the minimum acceptable value, while the final CAD dimension can be rounded upward to a more practical size.
+
+The repeated checking of the FBDs, T-beam clearances, stress equations, stiffness equations, and multiview dimensions took more time than expected, but it reduced the chance of carrying an early mistake into the final CAD model.
+
+### Time Spent
+
+The total time spent completing A5 was approximately:
+
+$$
+\boxed{10\text{ hours}}
+$$
+
+Most of this time was spent developing and correcting the free-body diagrams, checking the load path between features, and verifying the dimensions and calculations.
+
+---
+
+## CAD Download
+
+The final SolidWorks part is linked below:
+
+[A5 Bracket SolidWorks Part](../../assets/files/A5_Bracket_Florencondia.SLDPRT)
+
+---
+
+## References
+
+1. MEGR 2156 A5 Bracket Design assignment specifications and T-beam dimensions.
+2. Uline Heavy-Duty Polyester Cord Strapping, 3/4 in width.
+3. ASTM A36 steel material properties used for \(S_y\) and \(E\).
+4. *Machinery's Handbook* - section properties, bending stress, axial deformation, and beam-deflection equations.
