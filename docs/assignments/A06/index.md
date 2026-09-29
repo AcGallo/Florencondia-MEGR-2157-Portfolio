@@ -500,7 +500,11 @@ The drawing title block identifies:
 
 > **Figure A6-6 - Final A6 third-angle engineering drawing**
 >
-> <img src="../../assets/images/63.png" alt="Final A6 bracket engineering drawing with dimensions, tolerances, title block, and third-angle views" style="width:100%; height:auto;">
+> <div style="width:140%; margin-left:-20%;">
+>   <img src="../../assets/images/63.png"
+>        alt="Final A6 bracket engineering drawing with dimensions, tolerances, title block, and third-angle views"
+>        style="width:100%; height:auto;">
+> </div>
 
 ---
 
