@@ -1,46 +1,32 @@
-<!--
-A6 WORKING PROTOTYPE
-This page is intentionally built as a complete A6 structure before the physical CAD/drawing work is finished.
-Replace the image files and revise any process/reflection wording so it matches what was actually done before final submission.
-Image numbering continues from A5: 56.png and up.
--->
-
-# A6 - Design for Strength and Stiffness II
+# A6 - Bracket Drawing and Parametric Design
 
 ## Objective
 
-The objective of A6 is to continue the bracket design from A5 by turning the selected geometry into a **parametrically controlled SolidWorks model** and a **fully dimensioned engineering drawing**.
+The objective of A6 was to continue the bracket developed in A5 by turning the final design into a **parametrically controlled SolidWorks model** and a **fully dimensioned engineering drawing**.
 
-A5 established the bracket geometry by checking the five main features for both strength and stiffness. A6 continues from those results rather than repeating the complete analysis. The main goals are to:
+A5 established the final bracket geometry from the strength, stiffness, and T-beam fit requirements. A6 focused on carrying those design decisions into CAD in a more controlled way and then communicating the final part with a professional drawing.
 
-- carry the final A5 dimensions into a parametric CAD model,
-- connect important CAD dimensions to named parameters and equations,
-- create a fully dimensioned **third-angle multiview drawing**,
-- apply appropriate tolerances to the T-beam sliding interfaces,
-- include the required general tolerance block,
-- and document the design process, decisions, mistakes, and lessons learned.
+The main goals were to:
 
-The A6 model uses the same final bracket concept developed in A5.
+- convert the important A5 design dimensions into SolidWorks global variables and equations,
+- preserve the final A5 bracket geometry,
+- verify the material and final parametric model,
+- create a **third-angle multiview drawing**,
+- fully dimension the part without unnecessary duplicate dimensions,
+- apply engineered tolerances to the critical T-beam sliding interfaces,
+- and export the final engineering drawing as a PDF.
 
-> **Figure A6-1 - A5 bracket used as the starting geometry for A6**
+> **Figure A6-1 - Final bracket geometry used as the starting point for A6**
 >
-> <img src="../../assets/images/56.png" alt="Final A5 bracket CAD model used as the starting geometry for A6" style="width:100%; height:auto;">
+> <img src="../../assets/images/56.png" alt="Final A5 bracket geometry used as the starting point for A6" style="width:100%; height:auto;">
 
 ---
 
 ## Analyze
 
-### A5 Design Carried Into A6
+### Starting from the A5 Design
 
-The bracket from A5 was divided into five features:
-
-- **Feature A:** cylindrical strap support
-- **Feature B:** vertical connector
-- **Feature C:** lower horizontal member
-- **Feature D:** vertical side member
-- **Feature E:** upper horizontal arm
-
-The A5 analysis compared the minimum dimension required by **stress** with the minimum dimension required by **stiffness**. Stress governed all five features, and each final CAD dimension was rounded upward from the governing analytical value.
+The A6 bracket uses the same final geometry selected during A5. The previous analysis showed that **stress governed the final size of all five features**, and the analytical minimums were rounded upward to practical CAD dimensions.
 
 | Feature | Stress Minimum | Stiffness Minimum | Governing Requirement | Final A5 Dimension |
 |---|---:|---:|---|---:|
@@ -50,38 +36,34 @@ The A5 analysis compared the minimum dimension required by **stress** with the m
 | D - thickness | 0.6580 in | 0.4096 in | Stress | 0.750 in |
 | E - thickness | 0.6580 in | 0.2615 in | Stress | 0.750 in |
 
-The selected A5 dimensions form the dimensional baseline for the A6 parametric model.
-
-### Final A5 Geometry
+The final dimensions carried into A6 were:
 
 | Parameter | Final Value |
 |---|---:|
 | Material | ASTM A36 Steel |
 | Feature A diameter, \(D_A\) | 1.000 in |
 | Feature A overall length, \(L_A\) | 1.000 in |
-| Feature B front-view width, \(w_B\) | 0.498 in |
-| Feature B vertical length, \(L_B\) | 0.750 in |
+| Feature B width, \(w_B\) | 0.498 in |
+| Feature B length, \(L_B\) | 0.750 in |
 | Feature B thickness, \(T_B\) | 0.375 in |
 | Feature C inside span, \(L_C\) | 2.5964 in |
 | Feature C depth, \(w_C\) | 1.000 in |
 | Feature C height, \(T_C\) | 0.875 in |
-| Feature D vertical opening, \(L_D\) | 1.599 in |
+| Feature D opening height, \(L_D\) | 1.599 in |
 | Feature D depth, \(w_D\) | 1.000 in |
 | Feature D thickness, \(T_D\) | 0.750 in |
 | Feature E reach, \(L_E\) | 0.9992 in |
 | Feature E depth, \(w_E\) | 1.000 in |
 | Feature E thickness, \(T_E\) | 0.750 in |
 | Top center opening | 0.5980 in |
-| Overall D-to-D width | 4.0964 in |
-| Bottom of C to top of E | 3.224 in |
 
-These dimensions already satisfy the A5 strength and stiffness requirements, so A6 focuses on controlling them parametrically and communicating them correctly through an engineering drawing.
+The A6 work therefore did not require a new structural design. The main engineering task was to make the CAD model and drawing communicate the existing design more clearly.
 
 ---
 
-## T-Beam Interface Geometry
+### T-Beam Fit Geometry
 
-The bracket must slide over the rigid T-beam specified in the assignment.
+The bracket slides over the same rigid T-beam used in A5.
 
 | T-Beam Dimension | Nominal Size | Given Tolerance |
 |---|---:|---:|
@@ -89,9 +71,9 @@ The bracket must slide over the rigid T-beam specified in the assignment.
 | \(b\) | 0.9992 in | \(+0.0000/-0.0005\) in |
 | \(c\) | 1.499 in | \(+0.000/-0.001\) in |
 
-The T-beam dimensions are important because they control the internal geometry of the bracket.
+Because the given T-beam tolerances only allow the beam dimensions to become smaller, the nominal dimensions represent the largest fit condition.
 
-The horizontal opening used in the bracket is:
+The horizontal bracket opening is:
 
 $$
 L_C=a+2b+0.100
@@ -119,13 +101,13 @@ $$
 \boxed{L_D=1.599\text{ in}}
 $$
 
-The upper-arm reach follows the T-beam flange dimension:
+The upper-arm reach is:
 
 $$
 \boxed{L_E=b=0.9992\text{ in}}
 $$
 
-The opening between the two upper arms is:
+The top center opening is:
 
 $$
 \text{Top Opening}=L_C-2L_E
@@ -139,311 +121,60 @@ $$
 \boxed{\text{Top Opening}=0.5980\text{ in}}
 $$
 
-This geometry preserves the sliding clearance established during A5.
-
-> **Figure A6-2 - T-beam interface and bracket dimensions carried forward from A5**
->
-> <img src="../../assets/images/57.png" alt="T-beam interface dimensions used to control the A6 bracket geometry" style="width:100%; height:auto;">
+These fit-controlled dimensions were kept separate from the structural thicknesses so that the drawing could clearly distinguish between **fit requirements** and **strength-controlled dimensions**.
 
 ---
 
-# Parametric Design
+## Parametric CAD Model
 
-## Parametric Modeling Strategy
+### Global Variables and Equations
 
-The original A5 geometry was created primarily by entering dimensions directly into the SolidWorks sketches and features. For A6, the same geometry is reorganized so that the important dimensions are controlled through **global variables and equations**.
+The original A5 bracket was modeled mostly with directly entered dimensions. For A6, the important design values were organized using SolidWorks **global variables and equations**.
 
-The purpose of this change is not to redesign the bracket. The purpose is to make the existing engineering decisions visible inside the CAD model and make related dimensions update together.
+The main parameter set included:
 
-The main variables used for the bracket are:
+```text
+a = 0.498 in
+b = 0.9992 in
+c = 1.499 in
+Clearance = 0.100 in
 
-| Global Variable | Meaning | Value / Expression |
-|---|---|---:|
-| `a` | T-beam stem width | 0.498 in |
-| `b` | T-beam flange dimension | 0.9992 in |
-| `c` | T-beam height | 1.499 in |
-| `Clearance` | Total added clearance | 0.100 in |
-| `DA` | Feature A diameter | 1.000 in |
-| `LA` | Feature A overall length | 1.000 in |
-| `wB` | Feature B front width | 0.498 in |
-| `LB` | Feature B vertical length | 0.750 in |
-| `TB` | Feature B thickness | 0.375 in |
-| `LC` | Feature C inside span | `a + 2*b + Clearance` |
-| `wC` | Feature C depth | 1.000 in |
-| `TC` | Feature C height | 0.875 in |
-| `LD` | Feature D opening | `c + Clearance` |
-| `wD` | Feature D depth | 1.000 in |
-| `TD` | Feature D thickness | 0.750 in |
-| `LE` | Feature E reach | `b` |
-| `wE` | Feature E depth | 1.000 in |
-| `TE` | Feature E thickness | 0.750 in |
+DA = 1.000 in
+LA = 1.000 in
 
-Using expressions for the fit-controlled dimensions makes the relationship between the T-beam and the bracket visible directly in the CAD model.
+wB = 0.498 in
+LB = 0.750 in
+TB = 0.375 in
 
-> **Figure A6-3 - SolidWorks global-variable and equation table**
->
-> <img src="../../assets/images/58.png" alt="SolidWorks equation manager showing global variables used for the A6 bracket" style="width:100%; height:auto;">
+wC = 1.000 in
+TC = 0.875 in
 
----
+wD = 1.000 in
+TD = 0.750 in
 
-## Feature A - Cylindrical Strap Support
+wE = 1.000 in
+TE = 0.750 in
+```
 
-The A5 stress analysis determined that the minimum Feature A diameter was:
+The fit-controlled dimensions were then related to the T-beam variables:
 
 $$
-D_{A,\text{stress}}
-=
-\sqrt[3]{\frac{32M_{\max}}
-{\pi\sigma_{\text{allow}}}}
+L_C=a+2b+\text{Clearance}
 $$
 
-Using the A5 loading condition:
-
-$$
-M_{\max}=650\text{ lbf}\cdot\text{in}
-$$
-
-and:
-
-$$
-\sigma_{\text{allow}}=9000\text{ psi}
-$$
-
-the analytical result was:
-
-$$
-\boxed{D_{A,\text{stress}}=0.9027\text{ in}}
-$$
-
-The manufacturing dimension selected in A5 was rounded upward to:
-
-$$
-\boxed{D_A=1.000\text{ in}}
-$$
-
-For the A6 parametric model, the cylindrical diameter is therefore controlled by the named parameter `DA`.
-
-Feature A also uses:
-
-$$
-\boxed{L_A=1.000\text{ in}}
-$$
-
-> **Figure A6-4 - Feature A dimensions controlled parametrically in SolidWorks**
->
-> <img src="../../assets/images/59.png" alt="Feature A diameter and length controlled by SolidWorks parameters" style="width:100%; height:auto;">
-
----
-
-## Feature B - Vertical Connector
-
-Feature B carries the center load from Feature A into Feature C.
-
-The A5 stress equation for Feature B was:
-
-$$
-\sigma=\frac{P_B}{w_BT_B}
-$$
-
-Solving for the required thickness:
-
-$$
-T_{B,\text{stress}}
-=
-\frac{P_B}
-{w_B\sigma_{\text{allow}}}
-$$
-
-which gave:
-
-$$
-\boxed{T_{B,\text{stress}}=0.2900\text{ in}}
-$$
-
-The final selected dimension was:
-
-$$
-\boxed{T_B=0.375\text{ in}}
-$$
-
-Feature B also uses:
-
-$$
-\boxed{w_B=0.498\text{ in}}
-$$
-
-and:
-
-$$
-\boxed{L_B=0.750\text{ in}}
-$$
-
-These values are assigned to the parameters `wB`, `LB`, and `TB`.
-
----
-
-## Feature C - Lower Horizontal Member
-
-Feature C carries the center load between the two side members.
-
-The A5 maximum bending moment was:
-
-$$
-M_{\max}=\frac{P_CL_C}{4}
-$$
-
-which produced:
-
-$$
-\boxed{M_{\max}=843.83\text{ lbf}\cdot\text{in}}
-$$
-
-The required height from the stress calculation was:
-
-$$
-T_{C,\text{stress}}
-=
-\sqrt{\frac{6M_{\max}}
-{w_C\sigma_{\text{allow}}}}
-$$
-
-$$
-\boxed{T_{C,\text{stress}}=0.7500\text{ in}}
-$$
-
-The final selected height was:
-
 $$
-\boxed{T_C=0.875\text{ in}}
+L_D=c+\text{Clearance}
 $$
 
-The A6 model uses:
-
-$$
-\boxed{w_C=1.000\text{ in}}
-$$
-
-and the fit-controlled span:
-
-$$
-\boxed{L_C=a+2b+0.100=2.5964\text{ in}}
-$$
-
-The important difference in A6 is that \(L_C\) can be entered as a relationship rather than only as a typed numerical value.
-
-> **Figure A6-5 - Features B and C controlled by named CAD parameters**
->
-> <img src="../../assets/images/60.png" alt="Feature B and Feature C parametric dimensions in the A6 SolidWorks model" style="width:100%; height:auto;">
-
----
-
-## Feature D - Vertical Side Member
-
-Feature D was sized from the moment created by the load on Feature E.
-
-The moment transferred into D is:
-
-$$
-M_D=FL_E
-$$
-
-$$
-M_D=(650)(0.9992)
-$$
-
-$$
-\boxed{M_D=649.48\text{ lbf}\cdot\text{in}}
-$$
-
-The A5 stress-controlled thickness was:
-
-$$
-T_{D,\text{stress}}
-=
-\sqrt{\frac{6M_D}
-{w_D\sigma_{\text{allow}}}}
-$$
-
-$$
-\boxed{T_{D,\text{stress}}=0.6580\text{ in}}
-$$
-
-The final selected thickness was:
-
-$$
-\boxed{T_D=0.750\text{ in}}
-$$
-
-Feature D also uses:
-
-$$
-\boxed{w_D=1.000\text{ in}}
-$$
-
-and the fit-controlled opening:
-
-$$
-\boxed{L_D=c+0.100=1.599\text{ in}}
-$$
-
----
-
-## Feature E - Upper Horizontal Arm
-
-Feature E acts as a cantilever over the T-beam flange.
-
-The maximum moment used in A5 was:
-
-$$
-M_E=FL_E
-$$
-
-$$
-\boxed{M_E=649.48\text{ lbf}\cdot\text{in}}
-$$
-
-The stress-controlled thickness was:
-
-$$
-T_{E,\text{stress}}
-=
-\sqrt{\frac{6M_E}
-{w_E\sigma_{\text{allow}}}}
-$$
-
-$$
-\boxed{T_{E,\text{stress}}=0.6580\text{ in}}
-$$
-
-The final selected thickness was:
-
 $$
-\boxed{T_E=0.750\text{ in}}
+L_E=b
 $$
 
-The A6 model uses:
-
-$$
-\boxed{w_E=1.000\text{ in}}
-$$
-
-and:
-
 $$
-\boxed{L_E=b=0.9992\text{ in}}
+\text{TopGap}=L_C-2L_E
 $$
-
-> **Figure A6-6 - Features D and E controlled by named CAD parameters**
->
-> <img src="../../assets/images/61.png" alt="Feature D and Feature E parametric dimensions in the A6 SolidWorks model" style="width:100%; height:auto;">
-
----
-
-## Parametric Model Check
-
-After the important dimensions are linked to global variables, the bracket should retain the same final geometry selected in A5.
 
-The expected final overall width is:
+The overall geometry can also be checked from:
 
 $$
 W_{\text{overall}}=L_C+2T_D
@@ -457,7 +188,7 @@ $$
 \boxed{W_{\text{overall}}=4.0964\text{ in}}
 $$
 
-The expected vertical dimension from the bottom of C to the top of E is:
+and:
 
 $$
 H=T_C+L_D+T_E
@@ -471,165 +202,315 @@ $$
 \boxed{H=3.224\text{ in}}
 $$
 
-These dimensions provide a quick check that the parametric model still matches the final A5 geometry.
-
-> **Figure A6-7 - Completed parametric bracket model**
+> **Figure A6-2 - SolidWorks global variables and equation table**
 >
-> <img src="../../assets/images/62.png" alt="Completed A6 parametric bracket model after dimensions were linked to variables" style="width:100%; height:auto;">
+> <img src="../../assets/images/57.png" alt="SolidWorks global variables and equations controlling the A6 bracket" style="width:100%; height:auto;">
 
 ---
 
-# Drawing
+### Linking the Main Sketch
 
-## Drawing Layout
+The main bracket profile in Sketch1 was updated so that the important dimensions were tied to the named design parameters rather than remaining as isolated numerical values.
 
-The second major part of A6 is a fully dimensioned engineering drawing of the bracket.
+Examples include:
 
-The drawing is arranged using **third-angle projection**. The primary orthographic views are:
+- Feature A diameter controlled by \(D_A\),
+- Feature B width controlled by \(w_B\),
+- Feature B length controlled by \(L_B\),
+- Feature C height controlled by \(T_C\),
+- Feature D thickness controlled by \(T_D\),
+- Feature E thickness controlled by \(T_E\),
+- Feature E reach controlled by \(L_E\),
+- and the fit-controlled opening dimensions tied back to the T-beam geometry.
 
-- Front
-- Top
-- Right
+The Feature A sketch uses a radius, so the circular dimension was related to the diameter parameter using:
 
-The purpose of the drawing is to communicate enough information that the bracket geometry can be interpreted and manufactured without relying on the 3D CAD model.
+$$
+R_A=\frac{D_A}{2}
+$$
 
-> **Figure A6-8 - Third-angle multiview drawing layout**
+With:
+
+$$
+D_A=1.000\text{ in}
+$$
+
+the sketch radius remains:
+
+$$
+\boxed{R_A=0.500\text{ in}}
+$$
+
+> **Figure A6-3 - Main parametric sketch with the A5 design dimensions**
 >
-> <img src="../../assets/images/63.png" alt="Third-angle projection layout for the A6 bracket engineering drawing" style="width:100%; height:auto;">
+> <img src="../../assets/images/58.png" alt="Main A6 SolidWorks sketch showing the parametric bracket dimensions" style="width:100%; height:auto;">
 
 ---
 
-## Drawing Dimensions
+### Analysis Equation Used in the Parameter Set
 
-The multiview drawing must completely describe the final part without unnecessarily repeating dimensions.
+One of the useful connections between the A5 calculations and the A6 CAD model is Feature B.
 
-The main design dimensions that need to be communicated are:
+For Feature B:
 
-| Feature / Parameter | Drawing Value |
-|---|---:|
-| \(D_A\) | 1.000 in |
-| \(L_A\) | 1.000 in |
-| \(w_B\) | 0.498 in |
-| \(L_B\) | 0.750 in |
-| \(T_B\) | 0.375 in |
-| \(L_C\) | 2.5964 in |
-| \(w_C\) | 1.000 in |
-| \(T_C\) | 0.875 in |
-| \(L_D\) | 1.599 in |
-| \(w_D\) | 1.000 in |
-| \(T_D\) | 0.750 in |
-| \(L_E\) | 0.9992 in |
-| \(w_E\) | 1.000 in |
-| \(T_E\) | 0.750 in |
-| Top opening | 0.5980 in |
-| Overall width | 4.0964 in |
-| C-to-E height | 3.224 in |
+$$
+\sigma=\frac{P_B}{w_BT_B}
+$$
 
-The dimensions associated with the T-beam interface are treated as functional fit dimensions because they determine whether the bracket can slide onto the rigid beam.
+Solving for the minimum thickness gives:
 
-> **Figure A6-9 - Dimensioned multiview drawing**
->
-> <img src="../../assets/images/64.png" alt="Dimensioned multiview engineering drawing of the A6 bracket" style="width:100%; height:auto;">
+$$
+T_{B,\text{stress}}
+=
+\frac{P_B}{w_B\sigma_{\text{allow}}}
+$$
+
+Using:
+
+$$
+P_B=1300\text{ lbf}
+$$
+
+$$
+w_B=0.498\text{ in}
+$$
+
+and:
+
+$$
+\sigma_{\text{allow}}
+=
+\frac{36,000}{4}
+=
+9000\text{ psi}
+$$
+
+gives:
+
+$$
+T_{B,\text{stress}}
+=
+\frac{1300}
+{(0.498)(9000)}
+$$
+
+$$
+\boxed{T_{B,\text{stress}}\approx0.290\text{ in}}
+$$
+
+The parameter table retained this analytical result while the final Feature B thickness remained the practical A5 selection:
+
+$$
+\boxed{T_B=0.375\text{ in}}
+$$
+
+This is an example of how the analytical result and the selected manufacturing dimension can exist together in the parametric design instead of being treated as unrelated values.
 
 ---
 
-## Engineered Tolerances
+### Material
 
-The A6 assignment requires the sliding-fit dimensions to be intentionally toleranced.
+The final part material was set to **ASTM A36 Steel**, matching the material used in the A5 analysis.
 
-The T-beam itself is specified as:
-
-$$
-a=0.498^{+0.000}_{-0.001}\text{ in}
-$$
+The important A5 material properties were:
 
 $$
-b=0.9992^{+0.0000}_{-0.0005}\text{ in}
+S_y=36,000\text{ psi}
 $$
 
 $$
-c=1.499^{+0.000}_{-0.001}\text{ in}
+E\approx29\times10^6\text{ psi}
 $$
 
-The corresponding bracket gaps must be checked so that tolerance accumulation does not remove the intended clearance.
-
-The critical drawing dimensions are the dimensions defining the internal T-beam interface:
-
-- horizontal internal opening,
-- vertical internal opening,
-- upper-arm reach / top opening,
-- and any directly associated gap dimensions.
-
-These dimensions should receive the engineered tolerances used in the final SolidWorks drawing rather than relying only on the general tolerance block.
-
-> **Figure A6-10 - Critical sliding-fit dimensions and engineered tolerance callouts**
+> **Figure A6-4 - ASTM A36 Steel assigned to the final bracket model**
 >
-> <img src="../../assets/images/65.png" alt="Critical T-beam sliding fit dimensions and engineered tolerance callouts on the A6 drawing" style="width:100%; height:auto;">
+> <img src="../../assets/images/60.png" alt="SolidWorks material window showing ASTM A36 Steel assigned to the bracket" style="width:100%; height:auto;">
 
 ---
 
-## General Tolerance Block
+### Sketch2 Correction
 
-The drawing includes the tolerance block required by the assignment:
+During the conversion to the A6 model, Sketch2 became **over-defined** because two coincident relations conflicted with the revised geometry.
 
-| Decimal Format | General Tolerance |
-|---|---:|
-| X.X | ±0.02 in |
-| X.XX | ±0.01 in |
-| X.XXX | ±0.005 in |
+Rather than rebuilding the entire feature, the conflicting relations were identified, removed, and the sketch was reconstructed with only the necessary constraints.
 
-In drawing-note form:
+This preserved the original bracket geometry while removing the sketch error.
+
+> **Figure A6-5 - Secondary bracket sketch after correcting the conflicting relations**
+>
+> <img src="../../assets/images/61.png" alt="Corrected secondary SolidWorks sketch used in the A6 bracket" style="width:100%; height:auto;">
+
+---
+
+## Engineering Drawing
+
+### Third-Angle Multiview
+
+The final engineering drawing uses **third-angle projection**.
+
+The primary views are:
+
+- Front view
+- Top view
+- Right-side view
+
+An isometric view was also included as a visual reference.
+
+The drawing scale is **1:2**, while all written dimensions represent the true part dimensions.
+
+The final drawing includes:
+
+- the main bracket dimensions,
+- centerlines and center marks,
+- Feature A diameter,
+- Feature B dimensions,
+- the T-beam fit openings,
+- critical engineered tolerances,
+- material identification,
+- a general tolerance block,
+- drawing title and number,
+- and a third-angle projection note.
+
+---
+
+### Dimensioning Strategy
+
+The drawing was dimensioned so that the critical geometry could be manufactured without unnecessary duplicate dimensions.
+
+For example, the vertical geometry is defined using:
+
+$$
+T_E=0.750\text{ in}
+$$
+
+$$
+L_D=1.599\text{ in}
+$$
+
+$$
+T_C=0.875\text{ in}
+$$
+
+instead of also adding the redundant overall height of 3.224 in.
+
+Likewise, the internal horizontal opening \(L_C\) was dimensioned directly instead of requiring the manufacturer to calculate it from the overall bracket width and the two side-wall thicknesses.
+
+This is especially important because \(L_C\) is a functional fit dimension.
+
+---
+
+### Engineered Fit Tolerances
+
+Three dimensions directly control the sliding interface between the bracket and the T-beam:
+
+$$
+\boxed{L_C=2.596\pm0.005\text{ in}}
+$$
+
+$$
+\boxed{L_D=1.599\pm0.005\text{ in}}
+$$
+
+$$
+\boxed{\text{Top Opening}=0.598\pm0.005\text{ in}}
+$$
+
+These dimensions were explicitly toleranced because they control whether the bracket can physically slide onto the rail.
+
+The minimum possible bracket openings are:
+
+$$
+L_{C,\min}=2.596-0.005=2.591\text{ in}
+$$
+
+$$
+L_{D,\min}=1.599-0.005=1.594\text{ in}
+$$
+
+$$
+\text{Top Opening}_{\min}=0.598-0.005=0.593\text{ in}
+$$
+
+The corresponding maximum T-beam dimensions are the nominal values:
+
+$$
+a+2b
+=
+0.498+2(0.9992)
+=
+2.4964\text{ in}
+$$
+
+$$
+c=1.499\text{ in}
+$$
+
+$$
+a=0.498\text{ in}
+$$
+
+Therefore, even at the minimum bracket dimensions:
+
+$$
+2.591-2.4964
+=
+\boxed{0.0946\text{ in}}
+$$
+
+$$
+1.594-1.499
+=
+\boxed{0.095\text{ in}}
+$$
+
+$$
+0.593-0.498
+=
+\boxed{0.095\text{ in}}
+$$
+
+The specified tolerances therefore preserve approximately **0.095 in of minimum total clearance** at each critical fit condition.
+
+---
+
+### General Tolerance Block
+
+The final drawing also includes the required general tolerance block:
 
 ```text
 UNLESS OTHERWISE SPECIFIED:
-
-X.X     ± .02
-X.XX    ± .01
-X.XXX   ± .005
-
 DIMENSIONS ARE IN INCHES
-THIRD ANGLE PROJECTION
-DO NOT SCALE DRAWING
+
+TOLERANCES:
+X.X   ± .02
+X.XX  ± .01
+X.XXX ± .005
 ```
 
-The general tolerance block applies to dimensions that do not have a separately specified tolerance.
+Critical fit dimensions were given their own explicit tolerances, while the remaining dimensions use the general block where applicable.
 
-Critical fit dimensions should use their own tolerances when the general block is not sufficient to protect the sliding interface.
+The drawing title block identifies:
 
-> **Figure A6-11 - Final title block and general tolerance block**
+- **Material:** ASTM A36 Steel
+- **Title:** A6 BRACKET
+- **Drawing Number:** A6-BRACKET-001
+- **Scale:** 1:2
+- **Projection:** Third Angle
+- **Date:** 09/29/2026
+
+> **Figure A6-6 - Final A6 third-angle engineering drawing**
 >
-> <img src="../../assets/images/66.png" alt="A6 engineering drawing title block and required general tolerance block" style="width:100%; height:auto;">
+> <img src="../../assets/images/63.png" alt="Final A6 bracket engineering drawing with dimensions, tolerances, title block, and third-angle views" style="width:100%; height:auto;">
 
 ---
 
-## Final Drawing Check
+## Decide
 
-Before the drawing is considered complete, it should be checked for:
+### Final A6 Design
 
-- third-angle projection,
-- all necessary dimensions,
-- no unnecessary duplicate dimensions,
-- correct diameter symbol for Feature A,
-- correct internal T-beam interface dimensions,
-- engineered tolerances on critical fit features,
-- required general tolerance block,
-- units shown as inches,
-- readable view spacing,
-- and a completed drawing/title block.
+The final A6 design retained the structural dimensions selected during A5 because those dimensions had already been verified against the allowable stress and maximum-deflection requirements.
 
-> **Figure A6-12 - Final A6 engineering drawing**
->
-> <img src="../../assets/images/67.png" alt="Final fully dimensioned and toleranced A6 engineering drawing" style="width:100%; height:auto;">
-
----
-
-# Decide
-
-## Final Parametric Design
-
-The A6 design retains the final dimensions selected during A5 because the previous calculations showed that the final geometry satisfied both the allowable stress and maximum-deflection requirements.
-
-The governing final dimensions remain:
+The controlling final dimensions remained:
 
 $$
 \boxed{
@@ -641,7 +522,7 @@ T_E=0.750\text{ in}
 }
 $$
 
-The fit-controlled dimensions remain:
+The fit-controlled dimensions remained:
 
 $$
 \boxed{
@@ -651,180 +532,110 @@ L_E=0.9992\text{ in}
 }
 $$
 
-The top center opening remains:
+with:
 
 $$
-\boxed{0.5980\text{ in}}
+\boxed{\text{Top Opening}=0.5980\text{ in}}
 $$
 
-The A6 improvement is therefore not a new bracket shape. The improvement is that the important engineering dimensions are organized as parameters and relationships inside the CAD model, and the final geometry is communicated using a formal engineering drawing.
+The important change in A6 was not the bracket shape. The improvement was in how the design was **controlled and communicated**.
+
+Using global variables and equations makes the CAD model easier to understand and modify, while the engineering drawing communicates the final dimensions and tolerances required to manufacture the part.
 
 ---
 
-## Why the A5 Dimensions Were Retained
+## Communicate
 
-A5 verified the final selected dimensions against the original requirements.
+### Parametric Modeling
 
-| Feature | Final Stress | Allowable Stress | Final Deflection | Allowed Deflection |
-|---|---:|---:|---:|---:|
-| A | 6,621 psi | 9,000 psi | 0.000114 in | 0.005 in |
-| B | 6,961 psi | 9,000 psi | 0.000180 in | 0.005 in |
-| C | 6,613 psi | 9,000 psi | 0.000293 in | 0.005 in |
-| D | 6,928 psi bending | 9,000 psi | 0.000814 in | 0.005 in |
-| E | 6,928 psi | 9,000 psi | 0.000212 in | 0.005 in |
+The main lesson from the parametric portion of A6 was that a CAD model can have the correct dimensions without necessarily being easy to control.
 
-Since all five final feature dimensions satisfied both requirements, there was no need to reduce or redesign the structural dimensions during A6.
+The original A5 model had the correct geometry, but most values were entered directly into the sketches. Moving the important dimensions into named parameters made the design intent more visible.
 
-Instead, the effort was directed toward **parametric control, fit, tolerance, and communication**.
-
----
-
-# Communicate
-
-## Design Process
-
-A6 continues directly from the analytical design completed during A5.
-
-The planned A6 workflow is:
-
-1. Open the final A5 SolidWorks bracket.
-2. Identify the dimensions that correspond to the A5 design variables.
-3. Create named global variables for the important dimensions.
-4. Replace directly entered dimensions with parameter-controlled dimensions.
-5. Create equations for dimensions that depend on the T-beam geometry.
-6. Rebuild the model and verify that the final dimensions remain correct.
-7. Create a third-angle SolidWorks drawing.
-8. Add the dimensions necessary to fully define the bracket.
-9. Apply engineered tolerances to the functional T-beam interface.
-10. Add the required general tolerance block and drawing information.
-11. Export the final drawing and document the completed process.
-
-This structure keeps the A6 CAD work tied directly to the calculations and decisions already documented in A5.
-
----
-
-## Connection Between Analysis and CAD
-
-One important purpose of parametric CAD is to prevent the analytical calculations and the final model from becoming separate pieces of work.
-
-For example, the A5 analysis determined the required Feature A diameter from:
-
-$$
-D_{A,\text{stress}}
-=
-\sqrt[3]{\frac{32M_{\max}}
-{\pi\sigma_{\text{allow}}}}
-$$
-
-The calculated minimum was:
-
-$$
-D_{A,\text{stress}}=0.9027\text{ in}
-$$
-
-which was rounded upward to the manufacturing value:
-
-$$
-D_A=1.000\text{ in}
-$$
-
-In A6, this final design value can be represented by the named SolidWorks variable `DA` and linked directly to the Feature A sketch dimension.
-
-A fit-controlled example is \(L_C\). Instead of entering 2.5964 in independently, the relationship can be written as:
+This was especially useful for the dimensions that depend directly on the T-beam geometry, such as:
 
 $$
 L_C=a+2b+\text{Clearance}
 $$
 
-This keeps the T-beam geometry and the bracket opening connected.
-
-If one of the controlling T-beam parameters changes, the dependent bracket dimension can update automatically.
-
----
-
-## Reflection - Analytical Equation Used to Drive a Parameter
-
-A6 requires at least one dimension in the parametric model to be connected to the engineering analysis rather than existing only as an unexplained number.
-
-A suitable controlling example from the A5 analysis is Feature A:
+and:
 
 $$
-D_{A,\text{stress}}
-=
-\sqrt[3]{\frac{32M_{\max}}
-{\pi\sigma_{\text{allow}}}}
+L_D=c+\text{Clearance}
 $$
 
-This equation determines the minimum acceptable diameter for Feature A.
+These relationships show where the final dimensions came from instead of treating them as unexplained numbers.
 
-The analytical minimum is \(0.9027\) in, while the final manufacturing dimension is \(1.000\) in. In the CAD model, the final design variable `DA` controls the Feature A diameter.
+---
 
-Another direct parametric relationship is:
+### Tolerancing Decisions
+
+The drawing also reinforced the difference between a **nominal dimension** and a **functional manufactured dimension**.
+
+The three fit dimensions were intentionally given explicit ±0.005 in tolerances because they directly control the bracket-to-T-beam interface.
+
+Other dimensions, such as the structural thicknesses, can use the general tolerance block because small variations in those dimensions do not control whether the bracket can slide onto the rail.
+
+This avoids applying unnecessarily tight tolerances to every dimension while still protecting the dimensions that matter most for function.
+
+---
+
+### Problems Encountered
+
+A6 took longer than expected because several SolidWorks issues appeared while converting the model.
+
+The first problem occurred while entering the global-variable equations. SolidWorks froze while an incomplete equation was being evaluated, forcing the program to be closed and reopened.
+
+The second problem occurred in Sketch2. After the main sketch dimensions were changed, Sketch2 became over-defined because two coincident relations conflicted with the revised geometry.
+
+The sketch was repaired by identifying the conflicting relations and removing them rather than rebuilding the complete part.
+
+These problems showed that parametric modeling is not only about writing equations. Existing sketch relations also have to remain compatible with the new parameter relationships.
+
+---
+
+### Lessons Learned
+
+A5 focused mainly on determining whether the bracket was strong and stiff enough. A6 showed that the next part of the engineering process is making the final design **controllable, manufacturable, and understandable to another person**.
+
+The biggest lessons from A6 were:
+
+- A correct CAD shape is not automatically a good parametric model.
+- Named parameters make the connection between calculations and CAD easier to follow.
+- Fit dimensions should be dimensioned directly instead of relying on tolerance stack-ups from unrelated dimensions.
+- Critical tolerances should protect function without making every dimension unnecessarily precise.
+- Sketch relations can conflict when dimensions are converted to equations, so changes need to be checked carefully.
+- A completed engineering drawing communicates information that the 3D model alone does not show.
+
+---
+
+### Time Spent
+
+The total time spent completing A6 was approximately:
 
 $$
-L_C=a+2b+\text{Clearance}
+\boxed{5\text{ hours}}
 $$
 
-which controls the horizontal opening of the bracket from the T-beam dimensions.
-
-The final reflection should describe the exact equation entered into SolidWorks after the final parametric model is completed.
+The work was completed on and off. A significant portion of the time was spent converting the existing A5 model into a parametric model, troubleshooting the SolidWorks equation and sketch-relation problems, and cleaning up the final engineering drawing.
 
 ---
 
-## Reflection - Tolerancing Decisions
+## CAD and Drawing Downloads
 
-The drawing contains both functional and non-critical dimensions.
-
-A **functional dimension** directly affects whether the bracket fits over the T-beam. These dimensions deserve greater control because excessive dimensional variation could eliminate the intended sliding clearance or create excessive looseness.
-
-Examples include:
-
-- the internal horizontal opening,
-- the vertical opening,
-- the top gap,
-- and the dimensions that position the upper arms around the T-beam.
-
-A **non-critical dimension** does not directly control the bracket-to-beam interface and can generally use a looser tolerance when manufacturing accuracy does not affect function.
-
-The final reflection should identify one actual tightly toleranced dimension and one actual loosely toleranced dimension from the completed drawing and explain why each tolerance was appropriate.
-
-Using unnecessarily tight tolerances on every dimension would increase manufacturing difficulty and cost without improving the function of the bracket.
-
----
-
-## Lessons Learned
-
-A5 focused mainly on determining whether the bracket was strong and stiff enough. A6 adds another part of the engineering process: making sure the calculated design can be controlled in CAD and communicated to someone who would manufacture it.
-
-The parametric model makes the design intent easier to follow because important values are represented by named variables rather than unrelated sketch dimensions.
-
-The drawing also shows why a nominal CAD dimension alone is not enough for manufacturing. Every real manufactured dimension has variation, and that variation becomes especially important where two parts must fit together.
-
-The most important lesson from the combined A5 and A6 work is that **analysis, CAD geometry, fit, and tolerancing must describe the same design**. A correct calculation is not useful if the CAD model does not use the result, and a correct CAD model is not enough if the drawing does not clearly communicate how the part should be made.
-
----
-
-## Time Spent
-
-The actual A6 completion time will be recorded after the parametric model and engineering drawing are finished.
-
----
-
-# CAD Download
-
-The finished A6 CAD files are linked below.
+The final A6 files are linked below.
 
 [Download A6 Parametric Bracket SolidWorks Part](../../assets/files/A6_Bracket_Florencondia.SLDPRT)
 
 [Download A6 Bracket SolidWorks Drawing](../../assets/files/A6_Bracket_Florencondia.SLDDRW)
 
-[Download A6 Engineering Drawing PDF](../../assets/files/A6_Bracket_Drawing_Florencondia.pdf)
+[Download A6 Engineering Drawing PDF](../../assets/files/A6_Bracket_Florencondia.pdf)
 
 ---
 
-# References
+## References
 
-1. MEGR 2156, **A6 - Design for Strength and Stiffness II**, assignment instructions.
-2. MEGR 2156, **A5 - Bracket Design**, previous strength and stiffness analysis.
-3. *Machinery's Handbook*, 32nd Edition, Standard Drafting Practices, pp. 621-635.
-4. SolidWorks parametric modeling, equations, global variables, and engineering drawing tools.
+1. MEGR 2156 A6 assignment instructions.
+2. MEGR 2156 A5 Bracket Design calculations and final dimensions.
+3. *Machinery's Handbook*, 32nd Edition - standard drafting and dimensioning practices.
+4. SolidWorks global variables, equations, parametric modeling, and engineering drawing tools.
