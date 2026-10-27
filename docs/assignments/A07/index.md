@@ -23,7 +23,9 @@ The goal was to improve the bracket's strength and stiffness while keeping the d
 
 ---
 
-# Simulation Setup
+## Analyze
+
+### Simulation Setup
 
 A static SolidWorks Simulation study was used for all three designs.
 
@@ -39,7 +41,7 @@ The same material, fixtures, and applied loading were maintained between designs
 | Mesh Quality | High |
 | Convergence Requirement | 7% |
 
-## Fixtures
+#### Fixtures
 
 The bracket was fixed on the lower horizontal surfaces of the two upper arms where the bracket is supported by the T-beam.
 
@@ -47,7 +49,7 @@ The bracket was fixed on the lower horizontal surfaces of the two upper arms whe
 
 <img src="../../assets/images/64.png" alt="Fixed geometry applied to the upper bracket support surfaces" style="width:100%; height:auto;">
 
-## Applied Load
+#### Applied Load
 
 The cylinder was split so that the strap force could be applied only to the upper curved surface.
 
@@ -67,7 +69,7 @@ Using a selected direction prevented the force from acting radially normal to th
 
 ---
 
-# Outer Loop 1 — Design I
+### Outer Loop 1 — Design I
 
 Design I was the original bracket geometry from A5 and A6 and served as the baseline for the optimization.
 
@@ -85,9 +87,7 @@ $$
 
 The initial simulation showed that the most critical region was around **Feature B and its connection to the cylinder**.
 
----
-
-## Inner Loop 1 — Design I Mesh Convergence
+#### Inner Loop 1 — Mesh Convergence
 
 The mesh was refined by reducing the element size.
 
@@ -97,7 +97,7 @@ The mesh was refined by reducing the element size.
 | Mesh 2 | 0.150 in | 0.075 in | 26,231 |
 | Mesh 3 | 0.100 in | 0.050 in | 78,607 |
 
-### Mesh 1 Results
+#### Mesh 1 Results
 
 The first mesh predicted:
 
@@ -139,9 +139,7 @@ The largest displacement occurred at the lower/free portion of the cylinder.
 
 <img src="../../assets/images/68.png" alt="Design I Mesh 1 displacement result" style="width:100%; height:auto;">
 
----
-
-## Design I Convergence Calculations
+#### Design I Convergence Calculations
 
 The percent change between consecutive meshes was calculated using:
 
@@ -153,8 +151,6 @@ $$
 \times100
 $$
 
-### Mesh Results
-
 | Result | Mesh 1 | Mesh 2 | Mesh 3 |
 |---|---:|---:|---:|
 | Elements | 9,073 | 26,231 | 78,607 |
@@ -162,7 +158,7 @@ $$
 | Max Displacement | 0.2893 mm | 0.2933 mm | 0.2964 mm |
 | Minimum FOS | 0.4027 | 0.4561 | 0.4111 |
 
-### Mesh 1 → Mesh 2
+##### Mesh 1 → Mesh 2
 
 Stress:
 
@@ -190,7 +186,7 @@ $$
 
 Only displacement was below the 7% convergence requirement, so the mesh was refined again.
 
-### Mesh 2 → Mesh 3
+##### Mesh 2 → Mesh 3
 
 Stress:
 
@@ -220,9 +216,7 @@ The stress and factor-of-safety results were still above the 7% convergence requ
 
 However, this was the **third mesh attempt**, so the finer Mesh 3 results were used as the final Design I values according to the assignment procedure.
 
----
-
-## Final Design I Results
+#### Final Design I Results
 
 > **Figure A7-6 — Design I final Mesh 3 von Mises stress**
 
@@ -236,8 +230,6 @@ However, this was the **third mesh attempt**, so the finer Mesh 3 results were u
 
 <img src="../../assets/images/71.png" alt="Design I Mesh 3 final factor of safety" style="width:100%; height:auto;">
 
-Final Design I:
-
 | Result | Value |
 |---|---:|
 | Maximum Stress | 608.1 MPa |
@@ -250,7 +242,7 @@ The high stress around Feature B indicated that this part of the geometry should
 
 ---
 
-# Outer Loop 2 — Design II
+### Outer Loop 2 — Design II
 
 The first geometry modification increased the **front-view width of Feature B**.
 
@@ -278,9 +270,7 @@ Increasing the front-view width instead added material directly to the critical 
 
 <img src="../../assets/images/72.png" alt="Design II Feature B width increased to 0.625 inches" style="width:100%; height:auto;">
 
----
-
-# Inner Loop 2 — Design II Mesh Convergence
+#### Inner Loop 2 — Mesh Convergence
 
 | Result | Mesh 1 | Mesh 2 |
 |---|---:|---:|
@@ -289,7 +279,7 @@ Increasing the front-view width instead added material directly to the critical 
 | Max Displacement | 0.2323 mm | 0.2362 mm |
 | Minimum FOS | 0.7541 | 0.7087 |
 
-## Mesh 1 → Mesh 2
+##### Mesh 1 → Mesh 2
 
 Stress:
 
@@ -325,9 +315,7 @@ $$
 
 A third mesh was not required.
 
----
-
-## Final Design II Results
+#### Final Design II Results
 
 > **Figure A7-10 — Design II final Mesh 2 von Mises stress**
 
@@ -340,8 +328,6 @@ A third mesh was not required.
 > **Figure A7-12 — Design II final Mesh 2 factor of safety**
 
 <img src="../../assets/images/75.png" alt="Design II Mesh 2 final factor of safety" style="width:100%; height:auto;">
-
-Final Design II:
 
 | Result | Value |
 |---|---:|
@@ -383,7 +369,7 @@ This stress pattern motivated the next geometry change.
 
 ---
 
-# Outer Loop 3 — Design III
+### Outer Loop 3 — Design III
 
 Design III retained the wider Feature B from Design II and added **fillets to the upper and lower front transitions of Feature B**.
 
@@ -391,9 +377,7 @@ The goal was to remove the sharp transitions visible in the Design II stress plo
 
 The material, loading, fixtures, cylinder geometry, and Feature B axial thickness remained unchanged.
 
----
-
-# Inner Loop 3 — Design III Mesh Convergence
+#### Inner Loop 3 — Mesh Convergence
 
 | Result | Mesh 1 | Mesh 2 | Mesh 3 |
 |---|---:|---:|---:|
@@ -402,7 +386,7 @@ The material, loading, fixtures, cylinder geometry, and Feature B axial thicknes
 | Max Displacement | 0.2148 mm | 0.2183 mm | 0.2189 mm |
 | Minimum FOS | 0.7671 | 0.6811 | 0.6767 |
 
-## Mesh 1 → Mesh 2
+##### Mesh 1 → Mesh 2
 
 Stress:
 
@@ -430,7 +414,7 @@ $$
 
 Stress and factor of safety were not below the 7% criterion, so another refinement was required.
 
-## Mesh 2 → Mesh 3
+##### Mesh 2 → Mesh 3
 
 Stress:
 
@@ -464,9 +448,7 @@ $$
 \boxed{\text{Design III converged at Mesh 3}}
 $$
 
----
-
-## Final Design III Results
+#### Final Design III Results
 
 > **Figure A7-13 — Design III final Mesh 3 von Mises stress**
 
@@ -479,8 +461,6 @@ $$
 > **Figure A7-15 — Design III final Mesh 3 factor of safety**
 
 <img src="../../assets/images/78.png" alt="Design III Mesh 3 final factor of safety" style="width:100%; height:auto;">
-
-Final Design III:
 
 | Result | Value |
 |---|---:|
@@ -496,7 +476,9 @@ However, the final peak stress was slightly higher than Design II.
 
 ---
 
-# Design II vs. Design III Stress Distribution
+## Decide
+
+### Stress Distribution Comparison
 
 A close comparison of the stress plots showed that the fillets changed how the stress was distributed through Feature B.
 
@@ -546,7 +528,7 @@ Therefore, the fillets improved stiffness and produced a smoother stress distrib
 
 ---
 
-# Final Required Design Comparison
+### Final Design Comparison
 
 | Required Result | Design I | Design II | Design III |
 |---|---|---|---|
@@ -556,9 +538,7 @@ Therefore, the fillets improved stiffness and produced a smoother stress distrib
 | **Safety Factor** | **0.4111** | **0.7087** | **0.6767** |
 | **Number of Elements** | **78,607** | **26,636** | **78,494** |
 
----
-
-# Final Design Decision
+### Final Design Decision
 
 Design II was selected as the **best overall design of the three configurations tested**.
 
@@ -601,9 +581,7 @@ Therefore, Design II provided the better overall balance between:
 
 The most effective change during the optimization was therefore the increase in Feature B width from **0.498 in to 0.625 in**.
 
----
-
-# Safety Evaluation
+### Safety Evaluation
 
 Although Design II was the best design tested, the FEA results also revealed an important limitation.
 
@@ -645,9 +623,11 @@ Therefore, Design II should be considered the **best of the three designs evalua
 
 ---
 
-# Lessons Learned
+## Communicate
 
-## Mesh Convergence
+### Lessons Learned
+
+#### Mesh Convergence
 
 One of the most important lessons from this assignment was that different FEA results can converge at different rates.
 
@@ -667,9 +647,7 @@ This showed that a stable displacement result does not automatically mean that t
 
 Stress concentrations can remain highly sensitive to mesh density.
 
----
-
-## Geometry Should Follow the Load Path
+#### Geometry Should Follow the Load Path
 
 Increasing Feature B from 0.498 in to 0.625 in added material directly to the region carrying the load from the cylinder into the bracket.
 
@@ -687,9 +665,7 @@ $$
 
 This demonstrated that strategically adding a small amount of material can be more effective than increasing the size of the entire bracket.
 
----
-
-## Fillets Do Not Automatically Lower Peak Stress
+#### Fillets Do Not Automatically Lower Peak Stress
 
 The Design III fillets produced a visibly smoother and more distributed stress field.
 
@@ -699,17 +675,13 @@ This showed that a smoother-looking stress plot does not automatically mean that
 
 The actual converged values must still be compared.
 
----
-
-## Strength and Stiffness Can Favor Different Designs
+#### Strength and Stiffness Can Favor Different Designs
 
 Design III produced the smallest displacement, while Design II produced the lowest stress and highest factor of safety.
 
 Therefore, selecting the best design required evaluating multiple performance measures rather than optimizing only one quantity.
 
----
-
-## FEA and Hand Calculations Serve Different Purposes
+#### FEA and Hand Calculations Serve Different Purposes
 
 The analytical work from A5 modeled individual features using simplified axial and beam equations.
 
@@ -718,17 +690,17 @@ The FEA model evaluated the complete three-dimensional bracket and revealed loca
 The two methods are therefore complementary:
 
 - Hand calculations provide initial sizing and physical understanding.
-- FEA shows how the complete geometry actually transfers load and where local stress concentrations occur.
+- FEA shows how the complete geometry transfers load and where local stress concentrations occur.
 
 ---
 
-# Conclusion
+### Conclusion
 
 Three outer-loop bracket designs were evaluated using static FEA.
 
 Each design was checked using its own inner mesh-convergence loop.
 
-### Design I
+#### Design I
 
 The original bracket produced:
 
@@ -744,7 +716,7 @@ $$
 
 with a major stress concentration around Feature B.
 
-### Design II
+#### Design II
 
 Increasing the Feature B width from:
 
@@ -768,7 +740,7 @@ $$
 
 with almost no increase in mass.
 
-### Design III
+#### Design III
 
 Adding fillets around the Feature B transitions reduced maximum displacement to:
 
@@ -808,9 +780,7 @@ $$
 
 Further redesign would still be required to obtain a factor of safety greater than 1 under the modeled 1300 lbf load.
 
----
-
-# Time Spent
+### Time Spent
 
 The total time spent completing A7 was approximately:
 
