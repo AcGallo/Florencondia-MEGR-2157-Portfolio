@@ -409,11 +409,11 @@ The housing was divided into a base and a removable cover. The base contains bot
 
 > **Figure 3 – Final base housing with bearing openings, internal cavity, flange, and fastener holes**
 
-<img src="../../assets/images/84.png" alt="Final gearbox base housing CAD model" style="width:75%; height:auto;">
+<img src="../../assets/images/85.png" alt="Final gearbox base housing CAD model" style="width:75%; height:auto;">
 
 > **Figure 4 – Closed gearbox cover with matching flange and fastener pattern**
 
-<img src="../../assets/images/85.png" alt="Gearbox cover CAD model" style="width:75%; height:auto;">
+<img src="../../assets/images/86.png" alt="Gearbox cover CAD model" style="width:75%; height:auto;">
 
 ---
 
@@ -446,11 +446,11 @@ The section view also showed that the tooth faces of the two gears were not alig
 
 > **Figure 5 – Early section view showing the axial clearance problem between the gear hub and housing**
 
-<img src="../../assets/images/90.png" alt="Early gearbox section view showing axial clearance interference" style="width:70%; height:auto;">
+<img src="../../assets/images/91.png" alt="Early gearbox section view showing axial clearance interference" style="width:70%; height:auto;">
 
 > **Figure 6 – Early gear arrangement showing the axial misalignment between the pinion and output gear**
 
-<img src="../../assets/images/91.png" alt="Gearbox section view showing initial gear face misalignment" style="width:70%; height:auto;">
+<img src="../../assets/images/92.png" alt="Gearbox section view showing initial gear face misalignment" style="width:70%; height:auto;">
 
 Instead of modifying the purchased gears, I revised the housing geometry.
 
@@ -510,7 +510,7 @@ The final SolidWorks assembly confirmed the required center distance and meshing
 
 > **Figure 7 – Final 18-tooth and 48-tooth gear mesh inside the housing**
 
-<img src="../../assets/images/87.png" alt="Final gearbox gear mesh inside housing" style="width:75%; height:auto;">
+<img src="../../assets/images/90.png" alt="Final gearbox gear mesh inside housing" style="width:75%; height:auto;">
 
 The larger output gear provides the required speed reduction and corresponding torque increase:
 
@@ -550,7 +550,7 @@ The housing can be assembled and disassembled using the four perimeter fasteners
 
 > **Figure 8 – Final assembled gearbox with both shafts and housing fasteners installed**
 
-<img src="../../assets/images/88.png" alt="Completed A8 gearbox SolidWorks assembly" style="width:80%; height:auto;">
+<img src="../../assets/images/89.png" alt="Completed A8 gearbox SolidWorks assembly" style="width:80%; height:auto;">
 
 ---
 
@@ -564,7 +564,7 @@ The pinion and output gear also had different hub geometries, which caused the t
 
 > **Figure 9 – Revised section view showing the added 0.060 in support boss/spacer used to correct gear alignment**
 
-<img src="../../assets/images/89.png" alt="Section view showing the added 0.060 inch support boss or spacer for gear alignment" style="width:70%; height:auto;">
+<img src="../../assets/images/93.png" alt="Section view showing the added 0.060 inch support boss or spacer for gear alignment" style="width:70%; height:auto;">
 
 Using parametric variables for the gear diameters, center distance, clearances, bearing sizes, and housing dimensions made these design changes much easier because the major dimensions were already related to the selected components.
 
