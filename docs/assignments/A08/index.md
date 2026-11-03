@@ -560,7 +560,11 @@ This assignment showed me that designing around gears requires more than checkin
 
 I also learned that imported hardware should be checked in the assembly before the housing geometry is considered final. The actual McMaster-Carr gear models exposed dimensional details that were not obvious when I was initially creating the housing envelope.
 
-The pinion and output gear also had different hub geometries, which caused the tooth faces to be axially misaligned. Instead of changing the purchased gears, I revised the housing and added a 0.060 in support boss at the input bearing location. This corrected the alignment while also providing physical support behind the pinion.
+The pinion and output gear also had different hub geometries, which caused the tooth faces to be axially misaligned. Instead of changing the purchased gears, I revised the housing and added a **0.060 in support boss/spacer** at the input bearing location. This corrected the alignment while also providing physical support behind the pinion.
+
+> **Figure 9 – Revised section view showing the added 0.060 in support boss/spacer used to correct gear alignment**
+
+<img src="../../assets/images/89.png" alt="Section view showing the added 0.060 inch support boss or spacer for gear alignment" style="width:70%; height:auto;">
 
 Using parametric variables for the gear diameters, center distance, clearances, bearing sizes, and housing dimensions made these design changes much easier because the major dimensions were already related to the selected components.
 
