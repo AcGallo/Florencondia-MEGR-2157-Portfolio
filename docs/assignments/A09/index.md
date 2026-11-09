@@ -43,9 +43,9 @@ I chose values near the middle of the allowed ranges to provide a straightforwar
 
 The **5 lbf** is interpreted as the pretension in *each* belt span before torque is transmitted. The friction coefficient of **0.30** is an explicit, conservative design assumption for the idealized friction calculation, **not a measured property** of the selected belt/pulley pair. The no-slip result is conditional on the actual contact having at least the calculated required friction coefficient.
 
-> **Figure 1 – Proposed two-pulley arrangement showing the 3.000 in diameters, 5.000 in center distance, and belt path**
+> **Figure 1 – Proposed two-pulley arrangement showing two Ø3.000 in pulleys, their open belt path, and 5.000 in shaft center distance**
 
-<img src="../../assets/images/95.png" alt="A9 proposed pulley layout with two 3-inch pulleys and a 5-inch center distance" style="width:80%; height:auto;">
+<img src="../../assets/images/95.png" alt="A9 two-pulley geometry and belt path, dimensioned sketch" style="width:80%; height:auto;">
 
 ---
 
@@ -59,9 +59,9 @@ The **5 lbf** is interpreted as the pretension in *each* belt span before torque
 
 The pulley free-body diagram includes two tangential belt forces: $T_1$ on the tight side and $T_2$ on the loose side. Their **difference** transmits torque, while their approximate **sum** produces the radial load on each shaft.
 
-> **Figure 2 – Pulley free-body diagram with tight-side tension, loose-side tension, direction of rotation, radius, and 180° wrap angle**
+> **Figure 2 – Belt and pulley free-body diagram showing the tight and loose spans, 1.500 in pulley radius, and 180° contact angle**
 
-<img src="../../assets/images/96.png" alt="A9 belt and pulley free-body diagram with T1, T2, pulley radius, and wrap angle" style="width:80%; height:auto;">
+<img src="../../assets/images/96.png" alt="A9 belt pulley free-body diagram showing T1, T2, radius, wrap angle, and rotation" style="width:75%; height:auto;">
 
 #### Tight-Side and Loose-Side Tensions
 
@@ -256,9 +256,6 @@ $$
 
 The 5/16 in belt satisfies the assigned **static tensile-yield calculation**. This simplified check does not establish fatigue life, splice strength, creep resistance, or performance at operating speed.
 
-> **Figure 3 – Round-belt cross-section, area equation, minimum-diameter calculation, and selected 5/16 in size**
-
-<img src="../../assets/images/97.png" alt="A9 round polyurethane belt area and minimum diameter analysis" style="width:75%; height:auto;">
 
 #### Belt Circumference and Product Selection
 
@@ -304,9 +301,6 @@ $$
 
 This is a **geometric stretch estimate**, not a calculated 5-lbf tension. The given 471 psi stress at 20% strain does not provide a complete elastic stress–strain curve. Therefore, the actual installed pretension would be set with the adjustable support and checked if the design were physically assembled.
 
-> **Figure 4 – McMaster-Carr 9462T58 round polyurethane belt: 5/16 in diameter, custom circumference, and 2.5 in minimum pulley diameter**
-
-<img src="../../assets/images/98.png" alt="A9 selected McMaster-Carr 9462T58 polyurethane round belt specifications" style="width:80%; height:auto;">
 
 ---
 
@@ -322,9 +316,9 @@ The problem specifies **1060 hardened steel**. For this calculation I used a doc
 
 The model uses **two journal bearings per shaft**, with the pulley centered between them. This allows the bearing reactions and maximum bending moment to be determined from a simple free-body diagram.
 
-> **Figure 5 – Shaft free-body diagram showing the 10 lbf pulley load, two 5 lbf bearing reactions, 1.250 in support span, and transmitted torque**
+> **Figure 3 – Shaft free-body diagram showing a centered 10 lbf belt load, 1.250 in bearing span, 5 lbf reactions, and applied torque**
 
-<img src="../../assets/images/99.png" alt="A9 shaft free-body diagram with centered pulley load and two bearing supports" style="width:80%; height:auto;">
+<img src="../../assets/images/97.png" alt="A9 shaft free-body diagram with a centered pulley load and two bearing reactions" style="width:80%; height:auto;">
 
 #### Transmitted Torque and Bending Moment
 
@@ -454,9 +448,6 @@ $$
 
 This is the **nominal static shaft safety factor** for the stated loading and material model. A real manufactured shaft would also require proper bearing-journal finish, pulley attachment, and consideration of fatigue and local stress concentrations.
 
-> **Figure 6 – Shaft torque, bending-moment, symbolic diameter derivation, and selected 3/8 in shaft calculations**
-
-<img src="../../assets/images/100.png" alt="A9 1060 hardened steel shaft sizing and combined stress calculations" style="width:80%; height:auto;">
 
 ---
 
@@ -481,9 +472,9 @@ Each shaft is supported by two bearings, so the proposed complete two-shaft asse
 
 **Unknowns:** Projected bearing area, pressure $P$, surface speed $V$, PV value, and acceptable bearing material.
 
-> **Figure 7 – Journal bearing free-body diagram with the 5 lbf radial reaction, 0.375 in journal diameter, and 0.500 in length**
+> **Figure 4 – Journal-bearing geometry and free-body diagram showing the 5 lbf radial load, Ø0.375 in shaft, and 0.500 in bearing length**
 
-<img src="../../assets/images/101.png" alt="A9 journal bearing free-body diagram and projected bearing area" style="width:75%; height:auto;">
+<img src="../../assets/images/98.png" alt="A9 journal bearing sectional sketch and five pound radial load diagram" style="width:75%; height:auto;">
 
 #### Bearing Pressure
 
@@ -563,9 +554,6 @@ $$
 \boxed{N_{PV}=12.73>3}
 $$
 
-> **Figure 8 – Machinery's Handbook Table 4 bearing limits, with porous bronze identified as the selected material**
-
-<img src="../../assets/images/102.png" alt="A9 Machinery's Handbook Table 4 pressure speed PV comparison and porous bronze selection" style="width:80%; height:auto;">
 
 #### Selected Commercial Bearing
 
@@ -598,9 +586,6 @@ All three operating values are below the published limits, with a margin greater
 
 For an actual installation, the manufacturer's recommended **housing bore is 0.50015 ± 0.0005 in** and its recommended **finished shaft diameter is 0.37375 ± 0.0002 in**. These fits are separate from the nominal component sizes used in the preliminary strength analysis.
 
-> **Figure 9 – Oilite AA502- manufacturer dimensions, material designation, and pressure/velocity/PV ratings**
-
-<img src="../../assets/images/103.png" alt="A9 Oilite AA502 sintered bronze sleeve bearing manufacturer specifications" style="width:80%; height:auto;">
 
 ---
 
@@ -636,9 +621,11 @@ $$
 
 This agrees with the span used earlier in the shaft calculation.
 
-> **Figure 10 – Proposed dimensioned 6061-T6 frame: two 7.000 × 1.500 × 0.500 in rails, 5.000 in pulley spacing, and adjustable driven-shaft carriers**
+The same conceptual figure also shows how the two bearing loads are transmitted to the frame. The frame dimensions and force estimates are checked algebraically below, rather than repeated as handwritten calculations in an image.
 
-<img src="../../assets/images/104.png" alt="A9 frame sketch showing two aluminum rails, bearing mounting locations, and adjustable shaft spacing" style="width:85%; height:auto;">
+> **Figure 5 – Proposed supporting frame concept and loading diagram, showing the 7.000 in rails, 5.000 in pulley spacing, adjustable shaft supports, and 5 lbf bearing loads**
+
+<img src="../../assets/images/99.png" alt="A9 frame design sketch with rail dimensions, adjustable shaft carriers, and loading arrows" style="width:85%; height:auto;">
 
 #### Frame Free-Body Diagram and Stress Checks
 
@@ -712,9 +699,6 @@ $$
 
 The enormous margin indicates that these **simplified static rail stresses do not govern** the design; the rail thickness is instead influenced by the 0.500 in-long bearing and practical assembly. This value is **not an overall frame-system safety factor** because it excludes mounting-fastener effects, local stresses around slots, press-fit stresses, and other geometric details. Those details would require separate checks if a physical frame were manufactured.
 
-> **Figure 11 – Frame free-body diagram showing 5 lbf reactions per rail and the net-section/bending calculations**
-
-<img src="../../assets/images/105.png" alt="A9 support frame free-body diagram, net area, bending stress, and simplified safety factor" style="width:80%; height:auto;">
 
 ---
 
