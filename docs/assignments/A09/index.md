@@ -543,6 +543,10 @@ I compared the calculated value with **Table 4, Application Limits—Sintered Me
 | Reinforced Teflon | 2,500 psi | 1,000 ft/min | 10,000–15,000 psi·ft/min | Possible, but less PV margin |
 | **Porous bronze** | **4,500 psi** | **1,500 ft/min** | **50,000 psi·ft/min** | **Selected** |
 
+> **Reference excerpt – *Machinery's Handbook*, Table 4: bearing pressure, surface speed, and PV limits**
+
+<img src="../../assets/images/100.png" alt="Machinery's Handbook Table 4 bearing material limits; source screenshot" style="width:80%; height:auto;">
+
 The porous-bronze PV margin is:
 
 $$
@@ -594,6 +598,12 @@ For an actual installation, the manufacturer's recommended **housing bore is 0.5
 #### Frame Configuration
 
 I selected **6061-T6 aluminum** for the frame because it is lightweight, readily machined, and has adequate strength for the calculated belt loads. The concept uses **two parallel support rails**, one on either side of the pulley faces, with a pair of journal bearings supporting each shaft.
+
+As a supporting material-selection reference, I also used an **Ashby strength–density chart**. The chart helps visualize why aluminum is a reasonable choice for a lightweight structural frame: it offers much higher specific strength than wood or polymer foams while avoiding the excess density of many steels and cast irons for this low-load application.
+
+> **Reference chart – Ashby strength–density plot used to support the frame material selection**
+
+<img src="../../assets/images/101.png" alt="Ashby strength density chart used as a reference for A9 frame material selection" style="width:80%; height:auto;">
 
 | Frame feature | Design dimension |
 |---|---:|
@@ -771,7 +781,7 @@ The frame analysis showed a different design trade-off: the calculated load is s
 
 ### Time Spent
 
-**[Enter actual total hours spent on this assignment before submission.]**
+Approximately **5 hours** were spent completing the engineering calculations, component and material selection, frame design, drawings, and portfolio documentation for this assignment.
 
 ---
 
