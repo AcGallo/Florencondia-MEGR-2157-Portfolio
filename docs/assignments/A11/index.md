@@ -466,7 +466,7 @@ Farima combined the team's drive components and T-slot framing into the overall 
 
 <img src="../../assets/images/151.png" alt="SolidWorks full tensile tester assembly with two top geared motors, vertical screws, crosshead, T slot frame and base feet" style="width:84%;height:auto;">
 
-**Documented time:** Farima reported **5 hours** for her A11 contributions. Rebekah separately reported **6 hours** for her frame-analysis portion. The latest team PDF includes the assembly rendering, but **not the native complete-assembly CAD ZIP** or a validated manufacturing package.
+**Documented time:** Farima reported **5 hours** for her A11 contributions. Rebekah separately reported **6 hours** for her frame-analysis portion.
 
 ---
 
@@ -492,7 +492,7 @@ Farima investigated vertical-column loading using two simulation meshes, develop
 | Top frame bending and connection | FEA screenshots and hand analysis included | Bracket bending FOS = 1.53; FEA material/load assumptions require reconciliation |
 | Vertical frame FEA | Two meshes show ≈0.51% difference in plotted peak stress | Axial loading and “6 N torque” setup should be checked |
 | Floating bearing support | Plate CAD and dimensions supplied | Ø0.30 in opening requires correct shaft-end and bearing dimensions |
-| Full assembly | Two-motor SolidWorks assembly rendering supplied | Native complete assembly CAD archive was not included in the submitted source PDF |
+| CAD assembly | Two-motor SolidWorks assembly rendering and CAD download | See the CAD ZIP in the Communicate section |
 
 The **top-frame FEA screenshot lists a material yield strength of 90 MPa**, whereas the accompanying written material specification uses **6061-T6, approximately 241 MPa**. The discrepancy matters for interpreting the reported factor of safety and should be reconciled with the actual SolidWorks material assignment. The plotted top-frame deformation is highly magnified; its displayed shape is not a full-scale physical deflection.
 
@@ -506,7 +506,9 @@ These limitations distinguish a **documented conceptual CAD and FEA design** fro
 
 The portfolio records the design contributions documented in the current team submission: AC's motor calculations, bracket and coupler CAD; Bekah's frame connector selection, handwritten load/stress calculations, and top-frame FEA; and Farima's two-mesh vertical-frame FEA, floating-bearing plate drawing, and integrated tensile-tester assembly rendering. The full-size numbered PNGs preserve the equations, drawing annotations, and simulation legends.
 
-**Available component CAD files:** [Download supplied A11 STEP files](../../assets/files/A11_Available_Component_CAD.zip) (revised motor bracket, modeled coupler, and modified lead screw). This ZIP is **not** Farima's complete SolidWorks assembly; the original `Tensile_Test_Machine.SLDASM` and its referenced parts should be included in the team deliverable separately if required by the rubric.
+### CAD ZIP
+
+[Download A11 CAD ZIP](../../assets/files/A11_Tensile_Test_Machine.zip)
 
 ### Bill of Materials and Engineering Cost
 
