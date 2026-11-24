@@ -510,34 +510,34 @@ The portfolio records the design contributions documented in the current team su
 
 ### Bill of Materials and Engineering Cost
 
-The cost summary below incorporates the **A10 purchased-component baseline** and the new A11 additions documented in Rebekah's submitted portfolio. The team submission reports **four McMaster 5537T348 frame brackets at $13.21 each** and **two STEPPERONLINE geared motors at $79.94 each**. Those A11 additions have a **documented subtotal of $212.72**, not the cost of the complete machine. A10 component costs were taken from the earlier project cart. All amounts are in USD, excluding taxes and shipping; prices are source-specific and may change.
+The cost summary below incorporates the **A10 purchased-component baseline** and the new A11 additions documented in Rebekah's submitted portfolio. The team submission reports **four McMaster 5537T348 frame brackets at &#36;13.21 each** and **two STEPPERONLINE geared motors at &#36;79.94 each**. Those A11 additions have a **documented subtotal of &#36;212.72**, not the cost of the complete machine. A10 component costs were taken from the earlier project cart. All amounts are in USD, excluding taxes and shipping; prices are source-specific and may change.
 
 | Component / source | Quantity | Unit price | Extended cost |
 |---|---:|---:|---:|
-| [93410A608 — B7 3/8-10 Stub Acme lead screw](https://www.mcmaster.com/93410A608) | 2 | $75.50 | $151.00 |
-| [95072A127 — bronze Acme nut](https://www.mcmaster.com/95072A127) | 2 | $29.91 | $59.82 |
-| [95082A641 — steel nut flange](https://www.mcmaster.com/95082A641) | 2 | $37.06 | $74.12 |
-| [3136N735 — horizontal T-slot rail](https://www.mcmaster.com/3136N735) | 2 | $21.54 | $43.08 |
-| [3136N734 — vertical T-slot rail](https://www.mcmaster.com/3136N734) | 2 | $31.02 | $62.04 |
-| [3136N733 — base T-slot rail](https://www.mcmaster.com/3136N733) | 2 | $11.20 | $22.40 |
-| **A10 documented component subtotal** | | | **$412.46** |
-| [5537T348 — 90° extended frame corner bracket, M8 hardware included](https://www.mcmaster.com/5537T348) | 4 | $13.21 | $52.84 |
-| [23HS22-2804S-HG10 — geared NEMA 23 stepper](https://www.omc-stepperonline.com/nema-23-stepper-motor-l-56mm-gear-ratio-10-1-high-precision-planetary-gearbox-23hs22-2804s-hg10) | 2 | $79.94 | $159.88 |
-| **A11 additional documented component subtotal** | | | **$212.72** |
-| **A10 + A11 documented priced-component subtotal** | | | **$625.18** |
+| [93410A608 — B7 3/8-10 Stub Acme lead screw](https://www.mcmaster.com/93410A608) | 2 | &#36;75.50 | &#36;151.00 |
+| [95072A127 — bronze Acme nut](https://www.mcmaster.com/95072A127) | 2 | &#36;29.91 | &#36;59.82 |
+| [95082A641 — steel nut flange](https://www.mcmaster.com/95082A641) | 2 | &#36;37.06 | &#36;74.12 |
+| [3136N735 — horizontal T-slot rail](https://www.mcmaster.com/3136N735) | 2 | &#36;21.54 | &#36;43.08 |
+| [3136N734 — vertical T-slot rail](https://www.mcmaster.com/3136N734) | 2 | &#36;31.02 | &#36;62.04 |
+| [3136N733 — base T-slot rail](https://www.mcmaster.com/3136N733) | 2 | &#36;11.20 | &#36;22.40 |
+| **A10 documented component subtotal** | | | **&#36;412.46** |
+| [5537T348 — 90° extended frame corner bracket, M8 hardware included](https://www.mcmaster.com/5537T348) | 4 | &#36;13.21 | &#36;52.84 |
+| [23HS22-2804S-HG10 — geared NEMA 23 stepper](https://www.omc-stepperonline.com/nema-23-stepper-motor-l-56mm-gear-ratio-10-1-high-precision-planetary-gearbox-23hs22-2804s-hg10) | 2 | &#36;79.94 | &#36;159.88 |
+| **A11 additional documented component subtotal** | | | **&#36;212.72** |
+| **A10 + A11 documented priced-component subtotal** | | | **&#36;625.18** |
 
-We also allocated **$10 per custom A36 motor mount**, or **$20 for two**, as a *preliminary team budgeting assumption*, not a supplier quote. Including that allowance brings the preliminary priced/estimated component total to **$645.18**. The custom 6061-T6 couplers, set screws, selected floating bearings, the floating-bearing mounting plates, any remaining hardware, specimen grips, and other unquoted parts are **not included**; consequently neither subtotal is a complete manufacturing bill.
+We also allocated **&#36;10 per custom A36 motor mount**, or **&#36;20 for two**, as a *preliminary team budgeting assumption*, not a supplier quote. Including that allowance brings the preliminary priced/estimated component total to **&#36;645.18**. The custom 6061-T6 couplers, set screws, selected floating bearings, the floating-bearing mounting plates, any remaining hardware, specimen grips, and other unquoted parts are **not included**; consequently neither subtotal is a complete manufacturing bill.
 
-**Engineering labor.** We used the assignment's **$35/hour** rate and the time estimates in Rebekah's submitted portfolio. Her cost table lists **5–6 hours for AC**, so **5.5 hours** is used as AC's midpoint *labor estimate* for the team's cost model. Rebekah separately recorded **6 hours**, and Farima recorded **5 hours**.
+**Engineering labor.** We used the assignment's **&#36;35/hour** rate and the time estimates in Rebekah's submitted portfolio. Her cost table lists **5–6 hours for AC**, so **5.5 hours** is used as AC's midpoint *labor estimate* for the team's cost model. Rebekah separately recorded **6 hours**, and Farima recorded **5 hours**.
 
 | Team member | Hours used | Labor rate | Calculated labor cost |
 |---|---:|---:|---:|
-| **AC — motor, bracket, coupler** | **5.5 h (team estimate)** | $35/h | **$192.50** |
-| **Rebekah — frame connections and top-frame FEA** | **6 h (reported)** | $35/h | **$210.00** |
-| **Farima — vertical-frame FEA, bearing mount, assembly** | **5 h (reported)** | $35/h | **$175.00** |
-| **Total using these values** | **16.5 h** | | **$577.50** |
+| **AC — motor, bracket, coupler** | **5.5 h (team estimate)** | &#36;35/h | **&#36;192.50** |
+| **Rebekah — frame connections and top-frame FEA** | **6 h (reported)** | &#36;35/h | **&#36;210.00** |
+| **Farima — vertical-frame FEA, bearing mount, assembly** | **5 h (reported)** | &#36;35/h | **&#36;175.00** |
+| **Total using these values** | **16.5 h** | | **&#36;577.50** |
 
-For direct consistency with Rebekah's submitted portfolio, its original **5–6 hours per member** budget range is **15–18 team hours**, or **$525–$630 labor**. Combining this range with the **$212.72 A11 catalog component subtotal** gives her submitted **$737.72–$842.72 partial A11 estimate**. Her midpoint calculation is retained:
+For direct consistency with Rebekah's submitted portfolio, its original **5–6 hours per member** budget range is **15–18 team hours**, or **&#36;525–&#36;630 labor**. Combining this range with the **&#36;212.72 A11 catalog component subtotal** gives her submitted **&#36;737.72–&#36;842.72 partial A11 estimate**. Her midpoint calculation is retained:
 
 \[
 3(5.5)=16.5\  \mathrm{h},\qquad
@@ -545,7 +545,7 @@ For direct consistency with Rebekah's submitted portfolio, its original **5–6 
 \$212.72+\$577.50=\boxed{\$790.22}.
 \]
 
-The $790.22 figure is an **estimated A11 subtotal**, not the complete A10+A11 machine cost. It excludes the $20 allowance for two custom motor mounts and the unpriced components identified above. The time used for AC is the **team's budget estimate**, not a separately measured work log.
+The &#36;790.22 figure is an **estimated A11 subtotal**, not the complete A10+A11 machine cost. It excludes the &#36;20 allowance for two custom motor mounts and the unpriced components identified above. The time used for AC is the **team's budget estimate**, not a separately measured work log.
 
 ### Lessons Learned
 
